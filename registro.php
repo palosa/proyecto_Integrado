@@ -3,20 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Registro Food y Food</title>
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="css/css.css">
   </head>
   <body>
+    <header>
+      <div class="banner">
+      <img class="imagenlogo"src="images/logo.PNG" alt="">
 
-    <div class="">
-      <nav>
-        <ul>
-          <li><a href="">Carta</a></li>
-          <li><a href="">Productos</a></li>
-          <li><a href="">Reserva</a></li>
-          <li><a href="">Log out</a></li>
-        </ul>
-      </nav>
-    </div>
+      <a href="login.php">Iniciar sesion</a>
+      <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+      </div>
+    </header>
+    <!--MENU-->
+    <nav>
+      <ul>
+        <li><a href="">Carta</a></li>
+        <li><a href="">Reservas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <article class="article">
 
     <?php
     if (isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['usuario']) && isset($_POST['telefono']) && isset($_POST['dni']) && isset($_POST['pass']) && isset($_POST['direccion'])) {
@@ -50,5 +58,11 @@
       </form>
     </div>
     <?php } ?>
+  </article>
+  <footer>
+    <div class="text">
+    <p>Derechos reservados a FoodyFood©</p>
+    </div>
+  </footer>
   </body>
 </html>
