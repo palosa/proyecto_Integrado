@@ -49,6 +49,7 @@ li a:hover {
     background-color: #FFBF00;
 }
 .article{
+  border-top: 50px;
   height: 1000px;
 }
 footer{
@@ -60,7 +61,13 @@ footer{
   background-color: #333;
   border-bottom: 20px solid #FACC2E;
 }
-.text p{
+.text-footer{
   font-family: fantasy;
   color: white;
+
+
+}
+.footer-icon{
+height: 50px;
+width: 50px;
 }
