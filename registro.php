@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Club Catarroja</title>
+    <title>Registro Food y Food</title>
     <link rel="stylesheet" href="./css/estilos.css">
   </head>
   <body>
