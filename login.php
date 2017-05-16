@@ -3,20 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Login FoodyFood</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/css.css">
   </head>
   <body>
+    <header>
+      <div class="banner">
+      <img class="imagenlogo"src="images/logo.PNG" alt="">
+
+      <a href="login.php">Iniciar sesion</a>
+      <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+      </div>
+    </header>
     <!--MENU-->
-    <div class="">
-      <nav>
-        <ul>
-          <li><a href="">Carta</a></li>
-          <li><a href="">Productos</a></li>
-          <li><a href="">Reserva</a></li>
-          <li><a href="">Log out</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="">Carta</a></li>
+        <li><a href="">Reservas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <article class="article">
 
 
       <form class="" action="login.php" method="post">
@@ -44,5 +52,11 @@
       }
     }
      ?>
+   </article>
+   <footer>
+     <div class="text">
+     <p>Derechos reservados a FoodyFood©</p>
+     </div>
+   </footer>
   </body>
 </html>
