@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/css.css">
   </head>
   <body>
+    <!--header de la pagina con un banner y el logo-->
     <header>
       <div class="banner">
       <img class="imagenlogo"src="images/logo.PNG" alt="">
@@ -23,17 +24,19 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-
+<!--Cuerpo de la pagina-->
     <article class="article">
-
     <?php
     if (isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['usuario']) && isset($_POST['telefono']) && isset($_POST['dni']) && isset($_POST['pass']) && isset($_POST['direccion'])) {
+      //si el usuario rellena todos los campos, llamamos al archivo de la db y creamos el objeto.
       include '\modelo\usuario.php';
       $usuarios=new Usuario();
+      //llamada a la funcion de insertar usuario en la db
       $resultado=$usuarios->insertarUsuario($_POST['nombre'], $_POST['apellidos'], $_POST['usuario'], $_POST['telefono'], $_POST['dni'], $_POST['pass'], $_POST['direccion']);
       if ($resultado==null) {
         echo "Error";
       }else {
+        //si se inserta con exito, sacamos en el formulario los datos que se han insertado.
         echo "Usuario registrado. <br><br>";
         echo "<form>Nombre: <input type='text' name='oferta' value=".$resultado['nombre']." readonly><br><br>";
         echo "Apellidos: <input type='text' name='oferta' value=".$resultado['apellidos']." readonly><br><br>";
@@ -44,7 +47,7 @@
         }
     }else {
      ?>
-    <div class="contenido">
+      <!--Formulario de registro de los usuarios -->
       <form class="" action="registro.php" method="post">
         Nombre: <input type="text" name="nombre" value=""> <br><br>
         Apellidos:<input type="text" name="apellidos" value=""> <br><br>
@@ -56,9 +59,10 @@
         Vuelve a escribir la contraseña:<input type="password" name="pass2" value=""> <br><br>
         <input type="submit" name="Registrarse" value="Registrarse">
       </form>
-    </div>
+
     <?php } ?>
   </article>
+  <!--footer de la pagina -->
   <footer>
     <div class="text">
     <p>Derechos reservados a FoodyFood©</p>
