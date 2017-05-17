@@ -49,14 +49,17 @@
      ?>
       <!--Formulario de registro de los usuarios -->
       <form class="" action="registro.php" method="post">
-        Nombre: <input type="text" name="nombre" value=""> <br><br>
-        Apellidos:<input type="text" name="apellidos" value=""> <br><br>
-        Usuario: <input type="text" name="usuario" value=""> <br><br>
-        Telefono:<input type="text" name="telefono" value=""> <br><br>
-        DNI:<input type="text" name="dni" value=""><br><br>
-        Direccion: <input type="text" name="direccion" value=""><br><br>
-        Contraseña:<input type="password" name="pass" value=""> <br><br>
-        Vuelve a escribir la contraseña:<input type="password" name="pass2" value=""> <br><br>
+        <fieldset>
+          <legend>REGISTRO.</legend>
+          Nombre: <input type="text" name="nombre" value=""> <br><br>
+          Apellidos:<input type="text" name="apellidos" value=""> <br><br>
+          Usuario: <input type="text" name="usuario" value=""> <br><br>
+          Telefono:<input type="text" name="telefono" value=""> <br><br>
+          DNI:<input type="text" name="dni" value=""><br><br>
+          Direccion: <input type="text" name="direccion" value=""><br><br>
+          Contraseña:<input type="password" name="pass" value=""> <br><br>
+          Vuelve a escribir la contraseña:<input type="password" name="pass2" value=""> <br><br>
+        </fieldset>
         <input type="submit" name="Registrarse" value="Registrarse">
       </form>
 
