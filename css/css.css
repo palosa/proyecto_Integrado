@@ -1,6 +1,7 @@
 body{
-height: 700px;
-width: 1250px;
+  margin:5px;
+  width: 99%;
+  background-color:#FFFFF0;
 }
 header div a{
   float: right;
@@ -48,14 +49,9 @@ li a {
 li a:hover {
     background-color: #FFBF00;
 }
-.article{
-
-  height: 700px;
-}
 footer{
-  height: 125px;
-  width: 1250px;
-
+  margin:5px;
+  width: 99%;
   bottom: 0;
   position: relative;
   background-color: #333;
@@ -83,6 +79,17 @@ input{
   color: grey;
   display: block;
 }
-fieldset{
-  ;
+.article img{
+  height: 350px;
+  width: 450px;
+}
+div.centrar{
+text-align: center;
+}
+div.centrar table{
+  margin: 0 auto;
+  text-align:center;
+  font: 30px arial, sans-serif;
+  margin: 70px 10px 10px 20px;
+
 }
