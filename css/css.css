@@ -11,6 +11,7 @@ header div a{
 width: 140px;
 height: 115px;
 margin: 10px;
+float: left;
 }
 .banner{
   width: 1250px;
@@ -92,4 +93,32 @@ div.centrar table{
   font: 30px arial, sans-serif;
   margin: 70px 10px 10px 20px;
 
+}
+ strong{
+  font-style: normal;
+  font-family: fantasy;
+  color: #333;
+  font-size: 18px;
+}
+.encuentranos{
+
+}
+.nosotros{
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border:10px solid #FFBF00;
+
+  text-align: right;
+  opacity: 1;
+
+}
+.donde{
+  height: 250px;
+  width: 250px;
+}
+.foto-comida{
+  height: 250px;
+  width: 250px;
+  float: left;
 }

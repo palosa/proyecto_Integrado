@@ -8,7 +8,7 @@
   <body>
     <header>
       <div class="banner">
-      <a href="index.html"><img class="imagenlogo"src="images/logo.PNG" alt=""></a>
+      <img class="imagenlogo"src="images/logo.PNG" alt="">
 
       <a href="login.php">Iniciar sesion</a>
       <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -19,6 +19,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
+        <li><a href="formularioPedidos.php">Pedido</a></li>
         <li><a href="">Carta</a></li>
         <li><a href="">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
@@ -51,6 +52,7 @@
           //si el usuario es correcto, creamos la sesion.
           echo "Usuario logueado";
           $sesion->addUsuario($registrado['usuario']);
+          setcookie("id_usuario", $registrado['id'], time()+86400);
           //header('Location: index.php');
         }else {
           echo "Las contraseñas no coinciden";
