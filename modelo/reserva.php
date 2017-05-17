@@ -2,7 +2,7 @@
 
 //Incluyo db para la conexion a la base de datos
 
-include 'db.php';
+require_once 'db.php';
 
 //Creamos la clase que extiende de db
 

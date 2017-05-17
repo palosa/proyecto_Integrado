@@ -1,8 +1,10 @@
 <?php
 include 'seguridad/seguridad.php';
 include '/modelo/carta.php';
+include '/modelo/pedido.php';
 $sesion=new Seguridad();
 $carta= new Carta();
+$pedido= new Pedido();
   if (isset($_SESSION["usuario"])==false) {
     header('Location: login.php');
   }else {
@@ -37,10 +39,25 @@ $carta= new Carta();
         <?php
           $tabla=$carta->mostrarCarta();
           foreach ($tabla as $fila) {
-            echo "<input type='checkbox' name='".$fila['id']."' value='".$fila['id']."'>".$fila['nombre'].": " .$fila['descripcion'] ."<br><br>";
+            echo "<input type='checkbox' name='mierda' value='".$fila['id']."'> ".$fila['nombre'].": " .$fila['descripcion'] .".";
+
           }
          ?>
+         <input type="submit" name="Envar edido" value="Enviar pedido">
       </form>
+      <?php
+        if (isset($_POST['fecha'])) {
+          $pedidoregistrado=$pedido->hacerPedido($_COOKIE['id_usuario'], $_POST['fecha']);
+          if ($pedidoregistrado==null) {
+            echo "Ha ocurrido un error al hacer el pedido.";
+          }else {
+            echo "Pedido registrado. <br>";
+            echo "Fecha: " .$pedidoregistrado['fecha'] ."<br>";
+            echo "Usuario: " .$_SESSION['usuario'] ."<br>";
+          }
+          
+        }
+      ?>
   </article>
   <footer>
     <div class="text">
@@ -48,11 +65,7 @@ $carta= new Carta();
     <a href="https://www.facebook.com/FoodyFood-1205351362909040/"><img class="footer-icon" src="images/facebook.png" alt=""></a>
     </div>
   </footer>
-    <?php
-      if (isset($_POST['fecha'])) {
-        
-      }
-    ?>
+
   </body>
 </html>
 <?php } ?>

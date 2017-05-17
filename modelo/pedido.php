@@ -2,7 +2,7 @@
 
 //Incluyo db para la conexion a la base de datos
 
-include 'db.php';
+require_once 'db.php';
 
 //Creamos la clase que extiende de db
 
@@ -13,10 +13,10 @@ class Pedido extends db
   {
     parent::__construct();
   }
-}
+
 
 //funcion insertar equipo en la bd
-function insertarPedido($usuario, $fecha){
+function hacerPedido($usuario, $fecha){
   $sql="INSERT INTO pedido(id, id_user, fecha) VALUES (NULL, ".$usuario.", '".$fecha."')";
   //Realizamos la consulta
   $resultado=$this->realizarConsulta($sql);
@@ -33,6 +33,8 @@ function insertarPedido($usuario, $fecha){
   }else{
     return null;
   }
+}
+
 }
 
 
