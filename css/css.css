@@ -15,7 +15,7 @@ margin: 10px;
   width: 1250px;
   height: 200px;
   border: 3px ;
-    background-image: url("../images/banner.png");
+  background-image: url("../images/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   animation: banner 10s infitite;
