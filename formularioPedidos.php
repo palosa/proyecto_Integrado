@@ -39,7 +39,7 @@ $pedido= new Pedido();
         <?php
           $tabla=$carta->mostrarCarta();
           foreach ($tabla as $fila) {
-            echo "<input type='checkbox' name='mierda' value='".$fila['id']."'> ".$fila['nombre'].": " .$fila['descripcion'] .".";
+            echo "<input type='checkbox' name='".$fila['id']."' value='".$fila['id']."'> ".$fila['nombre'].": " .$fila['descripcion'] .".";
 
           }
          ?>
@@ -55,7 +55,7 @@ $pedido= new Pedido();
             echo "Fecha: " .$pedidoregistrado['fecha'] ."<br>";
             echo "Usuario: " .$_SESSION['usuario'] ."<br>";
           }
-          
+
         }
       ?>
   </article>
