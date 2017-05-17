@@ -70,7 +70,7 @@
   <footer>
     <div class="text">
     <p>Derechos reservados a FoodyFood©</p>
-    <a href="https://www.facebook.com/FoodyFood-1205351362909040/"><img class="footer-icon" src="images/facebook.png" alt=""></a>
+    <a href="https://www.facebook.com/FoodyFood-1205351362909040/" target="nueva"><img class="footer-icon" src="images/facebook.png" alt=""></a>
     </div>
   </footer>
   </body>
