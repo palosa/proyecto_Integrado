@@ -39,13 +39,14 @@ $pedido= new Pedido();
         <?php
           $tabla=$carta->mostrarCarta();
           foreach ($tabla as $fila) {
-            echo "<input type='checkbox' name='".$fila['id']."' value='".$fila['id']."'> ".$fila['nombre'].": " .$fila['descripcion'] .".";
+            echo "<input type='checkbox' name='carta[]' value='".$fila['id']."'> ".$fila['nombre'].": " .$fila['descripcion'] .".";
 
           }
          ?>
          <input type="submit" name="Envar edido" value="Enviar pedido">
       </form>
       <?php
+      var_dump($_POST['carta']);
         if (isset($_POST['fecha'])) {
           $pedidoregistrado=$pedido->hacerPedido($_COOKIE['id_usuario'], $_POST['fecha']);
           if ($pedidoregistrado==null) {
