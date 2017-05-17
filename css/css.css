@@ -81,6 +81,7 @@ input:hover{
 input{
   border-radius: 10px ;
   color: grey;
+  display: block;
 }
 fieldset{
   ;
