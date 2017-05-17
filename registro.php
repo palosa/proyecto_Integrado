@@ -19,6 +19,7 @@
     <!--MENU-->
     <nav>
       <ul>
+        <li><a href="Index.html">Inicio</a></li>
         <li><a href="">Carta</a></li>
         <li><a href="">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
@@ -48,9 +49,9 @@
     }else {
      ?>
       <!--Formulario de registro de los usuarios -->
-      <form class="" action="registro.php" method="post">
+      <form class="registro" action="registro.php" method="post">
         <fieldset>
-          <legend>REGISTRO.</legend>
+          <legend>REGISTRO</legend>
           Nombre: <input type="text" name="nombre" value=""> <br><br>
           Apellidos:<input type="text" name="apellidos" value=""> <br><br>
           Usuario: <input type="text" name="usuario" value=""> <br><br>
@@ -69,6 +70,7 @@
   <footer>
     <div class="text">
     <p>Derechos reservados a FoodyFood©</p>
+    <a href="https://www.facebook.com/FoodyFood-1205351362909040/"><img class="footer-icon" src="images/facebook.png" alt=""></a>
     </div>
   </footer>
   </body>
