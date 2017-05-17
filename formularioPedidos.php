@@ -1,6 +1,8 @@
 <?php
 include 'seguridad/seguridad.php';
+include '/modelo/carta.php';
 $sesion=new Seguridad();
+$carta= new Carta();
   if (isset($_SESSION["usuario"])==false) {
     header('Location: login.php');
   }else {
@@ -30,12 +32,13 @@ $sesion=new Seguridad();
       </ul>
     </nav>
     <article class="article">
-      <form class="" action="formulario" method="post">
-        Fecha: <input type="date" name="fecha" value="">
+      <form class="" action="formularioPedidos.php" method="post">
+        Fecha: <input type="date" name="fecha" value=""><br><br>
         <?php
-          include '/modelo/carta.php';
-          $carta= new Carta();
-
+          $tabla=$carta->mostrarCarta();
+          foreach ($tabla as $fila) {
+            echo "<input type='checkbox' name='".$fila['id']."' value='".$fila['id']."'>".$fila['nombre'].": " .$fila['descripcion'] ."<br><br>";
+          }
          ?>
       </form>
   </article>
@@ -45,6 +48,11 @@ $sesion=new Seguridad();
     <a href="https://www.facebook.com/FoodyFood-1205351362909040/"><img class="footer-icon" src="images/facebook.png" alt=""></a>
     </div>
   </footer>
+    <?php
+      if (isset($_POST['fecha'])) {
+        
+      }
+    ?>
   </body>
 </html>
 <?php } ?>

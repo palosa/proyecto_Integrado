@@ -9,7 +9,7 @@ include 'db.php';
 class Carta extends db
 {
 
-  function __construct(argument)
+  function __construct()
   {
     parent::__construct();
   }
