@@ -18,7 +18,7 @@
     <!--MENU-->
     <nav>
       <ul>
-        <li><a href="">Carta</a></li>
+        <li><a href="formulariopedidos.php">Pedido</a></li>
         <li><a href="">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
