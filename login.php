@@ -18,6 +18,7 @@
     <!--MENU-->
     <nav>
       <ul>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="">Carta</a></li>
         <li><a href="">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
@@ -26,7 +27,7 @@
     <!--Cuerpo de toda la paguina-->
     <article class="article">
       <!--Formulario de login-->
-      <form class="" action="login.php" method="post">
+      <form class="registro" action="login.php" method="post">
         <fieldset>
           <legend>LOGIN</legend>
           Usuario:<input type="text" name="usuario" value=""><br><br>
@@ -64,6 +65,7 @@
    <footer>
      <div class="text">
      <p>Derechos reservados a FoodyFood©</p>
+     <a href="https://www.facebook.com/FoodyFood-1205351362909040/"><img class="footer-icon" src="images/facebook.png" alt=""></a>
      </div>
    </footer>
   </body>

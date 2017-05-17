@@ -1,5 +1,5 @@
 body{
-height: 1000px;
+height: 700px;
 width: 1250px;
 }
 header div a{
@@ -49,8 +49,8 @@ li a:hover {
     background-color: #FFBF00;
 }
 .article{
-  border-top: 50px;
-  height: 1000px;
+
+  height: 700px;
 }
 footer{
   height: 125px;
@@ -65,9 +65,23 @@ footer{
   font-family: fantasy;
   color: white;
 
-
 }
 .footer-icon{
 height: 50px;
 width: 50px;
+}
+.registro{
+  margin-top: 50px;
+  border: 5px solid orange;
+  font-family: fantasy;
+}
+input:hover{
+    background-color: #FFBF00;
+}
+input{
+  border-radius: 10px ;
+  color: grey;
+}
+fieldset{
+  ;
 }
