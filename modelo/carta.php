@@ -19,7 +19,7 @@ class Carta extends db
         //Realizamos la consulta
         $resultado=$this->realizarConsulta($sql);
         if($resultado!=null){
-          //Montamos la tabla de resultados
+          //Montamos la tabla de resultado
           $tabla=[];
           while($fila=$resultado->fetch_assoc()){
             $tabla[]=$fila;
