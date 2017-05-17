@@ -9,7 +9,7 @@
     <!--header de la pagina con un banner y el logo-->
     <header>
       <div class="banner">
-    <a href="index.html"><img class="imagenlogo"src="images/logo.PNG" alt=""></a>
+    <img class="imagenlogo"src="images/logo.PNG" alt="">
 
       <a href="login.php">Iniciar sesion</a>
       <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
