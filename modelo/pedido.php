@@ -15,13 +15,13 @@ class Pedido extends db
   }
 
 
-//funcion insertar equipo en la bd
+//funcion insertar pedido en la bd
 function hacerPedido($usuario, $fecha){
   $sql="INSERT INTO pedido(id, id_user, fecha) VALUES (NULL, ".$usuario.", '".$fecha."')";
   //Realizamos la consulta
   $resultado=$this->realizarConsulta($sql);
   if($resultado!=false){
-    //Recogemos el ultimo usuario insertado
+    //Recogemos el ultimo pedido insertado
     $sql="SELECT * from pedido ORDER BY id DESC";
     //Realizamos la consulta
     $resultado=$this->realizarConsulta($sql);
