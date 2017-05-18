@@ -94,6 +94,12 @@ div.centrar table{
   margin: 70px 10px 10px 20px;
 
 }
+.article table{
+  margin: 0 auto;
+  text-align:center;
+  font: 30px arial, sans-serif;
+  margin: 70px 10px 10px 448px;
+}
  strong{
   font-style: normal;
   font-family: fantasy;
