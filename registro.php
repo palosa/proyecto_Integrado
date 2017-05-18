@@ -22,8 +22,8 @@
       <ul>
         <li><a href="Index.html">Inicio</a></li>
         <li><a href="formularioPedidos.php">Pedido</a></li>
-        <li><a href="">Carta</a></li>
-        <li><a href="">Reservas</a></li>
+        <li><a href="mostrarCarta.php">Carta</a></li>
+        <li><a href="formularioreservas.php">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
@@ -71,9 +71,12 @@
   <!--footer de la pagina -->
   <footer>
     <div class="text">
-    <p>Derechos reservados a FoodyFood©</p>
+    <p class="text-footer">Derechos reservados a FoodyFood©</p>
     <a href="https://www.facebook.com/FoodyFood-1205351362909040/" target="nueva"><img class="footer-icon" src="images/facebook.png" alt=""></a>
+    <a href="https://www.instagram.com/foodyfood.florida/" target="nueva"><img class="footer-icon" src="images/insta.png" alt=""></a>
+      <a href="https://www.twitter.com/foodyfood_flori" target="nueva"><img class="footer-icon" src="images/tuiter.png" alt=""></a>
     </div>
   </footer>
+
   </body>
 </html>
