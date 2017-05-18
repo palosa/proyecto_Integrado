@@ -27,22 +27,25 @@
     $letter = new Carta();
       $carta = $letter->mostrarCarta();
       ?>
-
   <article class="article">
       <table>
         <tr>
+          <th>Tipo</th>
           <th>Nombre</th>
           <th>Descripción</th>
+          <th>Precio</th>
         </tr>
         <?php foreach ($carta as  $fila):?>
         <tr>
+          <td><?= $fila['tipo'] ?></td>
           <td><?= $fila['nombre'] ?></td>
           <td><?= $fila['descripcion'] ?></td>
+          <td><?= $fila['precio']."€" ?></td>
         </tr>
       <?php endforeach; ?>
       </table>
       </article>
-      
+
       <footer>
         <div class="text">
         <p class="text-footer">Derechos reservados a FoodyFood©</p>
