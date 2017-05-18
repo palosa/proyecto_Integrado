@@ -4,5 +4,5 @@
   $sesion=new Seguridad();
   //llamamos a la funcion de logout para que destruya la sesion
   $sesion->logOut();
-  header('Location: index.html');
+  header('Location: index.php');
  ?>

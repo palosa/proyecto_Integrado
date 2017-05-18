@@ -18,7 +18,7 @@
     </header>
     <nav>
       <ul>
-        <li><a href="index.html">Carta</a></li>
+        <li><a href="index.php">Carta</a></li>
         <li><a href="news.asp">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
@@ -42,7 +42,7 @@
       <?php endforeach; ?>
       </table>
       </article>
-      
+
       <footer>
         <div class="text">
         <p class="text-footer">Derechos reservados a FoodyFood©</p>
