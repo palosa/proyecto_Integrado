@@ -26,23 +26,32 @@ $pedido= new Pedido();
       <div class="banner">
       <img class="imagenlogo"src="images/logo.PNG" alt="">
 
-      <a href="login.php">Iniciar sesion</a>
-      <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <?php
+        if (isset($_SESSION['usuario'])) {
+          echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
+        }else {
+          echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
+          <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
+        }
+       ?>
 
       </div>
     </header>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.php">Inicio</a></li>
         <li><a href="formularioPedidos.php">Pedido</a></li>
-        <li><a href="mostrarCarta.php">Carta</a></li>
+        <li><a href="mostrarcarta.php">Carta</a></li>
         <li><a href="formularioreservas.php">Reservas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.php">Contacto</a></li>
+        <li><a href="miPerfil.php">Mi Perfil</a></li>
       </ul>
     </nav>
     <!--En el article va todo el cuerpo de la pagina -->
     <article class="article">
       <form class="" action="formularioPedidos.php" method="post">
+        <fieldset>
+          <legend>Realiza un pedido</legend>
         <!--Formulario para el registro de los pedidos -->
         Fecha: <input type="date" name="fecha" value=""><br><br>
         <?php
@@ -53,6 +62,7 @@ $pedido= new Pedido();
           }
          ?>
          <input type="submit" name="Envar edido" value="Enviar pedido">
+       </fieldset>
       </form>
       <?php
       //comprobamos que los campos estan rellenados

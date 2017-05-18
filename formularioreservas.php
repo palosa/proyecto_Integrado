@@ -23,29 +23,38 @@
     <div class="banner">
     </a><img class="imagenlogo"src="images/logo.PNG" alt="">
 
-    <a href="login.php">Iniciar sesion</a>
-    <a href="registro.php">Registro&nbsp;&nbsp;</a>
-    <a href="logout.php">Cerrar sesion&nbsp;&nbsp;</a>
+    <?php
+      if (isset($_SESSION['usuario'])) {
+        echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
+      }else {
+        echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
+        <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
+      }
+     ?>
 
     </div>
     </header>
     <nav>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.php">Inicio</a></li>
       <li><a href="formularioPedidos.php">Pedido</a></li>
-      <li><a href="mostrarCarta.php">Carta</a></li>
+      <li><a href="mostrarcarta.php">Carta</a></li>
       <li><a href="formularioreservas.php">Reservas</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+      <li><a href="miPerfil.php">Mi Perfil</a></li>
     </ul>
     </nav>
     <article class="article">
 
     <!--Formulario de registro de la reserva -->
     <form class="" action="formularioreservas.php" method="post">
+      <fieldset>
+        <legend>Realiza tu reserva</legend>
       Fecha: <input type="date" name="fecha" value=""><br><br>
       Hora: <input type="time" name="hora" value=""><br><br>
       Numero de personas: <input type="number" name="personas" value="" min="1" max="100">
       <input type="submit" name="Reservar" value="Reservar">
+    </fieldset>
     </form>
     <?php
     //comprobamos que se han rellenado todos los campos
