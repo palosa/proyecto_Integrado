@@ -35,6 +35,23 @@ class Reserva extends db
     }
   }
 
+  function mostrarReserva(){
+        //Construimos la consulta
+        $sql="SELECT fecha, hora, personas from reserva";
+        //Realizamos la consulta
+        $resultado=$this->realizarConsulta($sql);
+        if($resultado!=null){
+          //Montamos la tabla de resultado
+          $tabla=[];
+          while($fila=$resultado->fetch_assoc()){
+            $tabla[]=$fila;
+          }
+          return $tabla;
+        }else{
+          return null;
+        }
+      }
+
 }
 
 
