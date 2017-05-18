@@ -26,8 +26,9 @@ $pedido= new Pedido();
       <div class="banner">
       <img class="imagenlogo"src="images/logo.PNG" alt="">
 
-      <a href="login.php">Iniciar sesion</a>
-      <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a href="login.php">Iniciar sesion</a><a>&nbsp;&nbsp;</a>
+      <a href="registro.php">Registro</a><a>&nbsp;&nbsp;</a>
+      <a href="logout.php">Cerrar sesion</a><a>&nbsp;&nbsp;</a>
 
       </div>
     </header>
