@@ -23,9 +23,14 @@
     <div class="banner">
     </a><img class="imagenlogo"src="images/logo.PNG" alt="">
 
-    <a href="login.php">Iniciar sesion</a><a>&nbsp;&nbsp;</a>
-    <a href="registro.php">Registro</a><a>&nbsp;&nbsp;</a>
-    <a href="logout.php">Cerrar sesion</a><a>&nbsp;&nbsp;</a>
+    <?php
+      if (isset($_SESSION['usuario'])) {
+        echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
+      }else {
+        echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
+        <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
+      }
+     ?>
 
     </div>
     </header>
@@ -33,9 +38,10 @@
     <ul>
       <li><a href="index.php">Inicio</a></li>
       <li><a href="formularioPedidos.php">Pedido</a></li>
-      <li><a href="mostrarCarta.php">Carta</a></li>
+      <li><a href="mostrarcarta.php">Carta</a></li>
       <li><a href="formularioreservas.php">Reservas</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+      <li><a href="miPerfil.php">Mi Perfil</a></li>
     </ul>
     </nav>
     <article class="article">
