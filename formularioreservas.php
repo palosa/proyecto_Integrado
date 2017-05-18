@@ -16,9 +16,30 @@
   <head>
     <meta charset="utf-8">
     <title>Formulario de reservas</title>
-    <link rel="stylesheet" href="/css/css.css">
+    <link rel="stylesheet" href="css/css.css">
   </head>
   <body>
+    <header>
+    <div class="banner">
+    </a><img class="imagenlogo"src="images/logo.PNG" alt="">
+
+    <a href="login.php">Iniciar sesion</a>
+    <a href="registro.php">Registro&nbsp;&nbsp;</a>
+    <a href="logout.php">Cerrar sesion&nbsp;&nbsp;</a>
+
+    </div>
+    </header>
+    <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="formularioPedidos.php">Pedido</a></li>
+      <li><a href="mostrarCarta.php">Carta</a></li>
+      <li><a href="formularioreservas.php">Reservas</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    </nav>
+    <article class="article">
+
     <!--Formulario de registro de la reserva -->
     <form class="" action="formularioreservas.php" method="post">
       Fecha: <input type="date" name="fecha" value=""><br><br>
@@ -44,6 +65,15 @@
         }
       }
      ?>
+   </article>
+   <footer>
+     <div class="text">
+     <p class="text-footer">Derechos reservados a FoodyFood©</p>
+     <a href="https://www.facebook.com/FoodyFood-1205351362909040/" target="nueva"><img class="footer-icon" src="images/facebook.png" alt=""></a>
+     <a href="https://www.instagram.com/foodyfood.florida/" target="nueva"><img class="footer-icon" src="images/insta.png" alt=""></a>
+       <a href="https://www.twitter.com/foodyfood_flori" target="nueva"><img class="footer-icon" src="images/tuiter.png" alt=""></a>
+     </div>
+   </footer>
   </body>
 </html>
 <?php } ?>
