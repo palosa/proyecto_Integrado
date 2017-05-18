@@ -13,6 +13,7 @@
 
       <a href="login.php">Iniciar sesion</a>
       <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a href="logout.php">Cerrar sesion&nbsp;&nbsp;</a>
 
       </div>
     </header>
@@ -20,6 +21,7 @@
     <nav>
       <ul>
         <li><a href="Index.html">Inicio</a></li>
+        <li><a href="formularioPedidos.php">Pedido</a></li>
         <li><a href="">Carta</a></li>
         <li><a href="">Reservas</a></li>
         <li><a href="contacto.html">Contacto</a></li>

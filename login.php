@@ -12,6 +12,7 @@
 
       <a href="login.php">Iniciar sesion</a>
       <a href="registro.php">Registro&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a href="logout.php">Cerrar sesion&nbsp;&nbsp;</a>
 
       </div>
     </header>
