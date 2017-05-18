@@ -11,17 +11,27 @@
       <div class="banner">
       <img class="imagenlogo"src="images/logo.PNG" alt="">
 
-      <a href="login.php">Iniciar sesion</a><a>&nbsp;&nbsp;</a>
-      <a href="registro.php">Registro</a><a>&nbsp;&nbsp;</a>
-      <a href="logout.php">Cerrar sesion</a><a>&nbsp;&nbsp;</a>
+      <?php
+      include 'seguridad/seguridad.php';
+      $sesion=new Seguridad();
+        if (isset($_SESSION['usuario'])) {
+          echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
+        }else {
+          echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
+          <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
+        }
+       ?>
 
       </div>
     </header>
     <nav>
       <ul>
-        <li><a href="index.php">Carta</a></li>
-        <li><a href="news.asp">Reservas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="formularioPedidos.php">Pedido</a></li>
+        <li><a href="mostrarcarta.php">Carta</a></li>
+        <li><a href="formularioreservas.php">Reservas</a></li>
+        <li><a href="contacto.php">Contacto</a></li>
+        <li><a href="miPerfil.php">Mi Perfil</a></li>
       </ul>
     </nav>
     <?php include '/modelo/carta.php';
