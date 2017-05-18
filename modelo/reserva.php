@@ -6,13 +6,35 @@ require_once 'db.php';
 
 //Creamos la clase que extiende de db
 
-class producto extends db
+class Reserva extends db
 {
 
-  function __construct(argument)
+  function __construct()
   {
-    # code...
+    parent::__construct();
   }
+
+  //funcion insertar reserva en la bd
+  function hacerReserva($usuario, $fecha, $hora, $personas){
+    $sql="INSERT INTO reserva(id, user, fecha, hora, personas) VALUES (NULL, ".$usuario.", '".$fecha."', '".$hora."', ".$personas.")";
+    //Realizamos la consulta
+    $resultado=$this->realizarConsulta($sql);
+    if($resultado!=false){
+      //Recogemos la ultima reserva insertada
+      $sql="SELECT * from reserva ORDER BY id DESC";
+      //Realizamos la consulta
+      $resultado=$this->realizarConsulta($sql);
+      if($resultado!=false){
+        //sacamos el resultado con un fetch_assoc
+        return $resultado->fetch_assoc();
+      }else{
+        return null;
+      }
+    }else{
+      return null;
+    }
+  }
+
 }
 
 
