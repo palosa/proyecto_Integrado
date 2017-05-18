@@ -48,10 +48,13 @@
 
     <!--Formulario de registro de la reserva -->
     <form class="" action="formularioreservas.php" method="post">
+      <fieldset>
+        <legend>Realiza tu reserva</legend>
       Fecha: <input type="date" name="fecha" value=""><br><br>
       Hora: <input type="time" name="hora" value=""><br><br>
       Numero de personas: <input type="number" name="personas" value="" min="1" max="100">
       <input type="submit" name="Reservar" value="Reservar">
+    </fieldset>
     </form>
     <?php
     //comprobamos que se han rellenado todos los campos

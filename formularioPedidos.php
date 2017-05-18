@@ -50,6 +50,8 @@ $pedido= new Pedido();
     <!--En el article va todo el cuerpo de la pagina -->
     <article class="article">
       <form class="" action="formularioPedidos.php" method="post">
+        <fieldset>
+          <legend>Realiza un pedido</legend>
         <!--Formulario para el registro de los pedidos -->
         Fecha: <input type="date" name="fecha" value=""><br><br>
         <?php
@@ -60,6 +62,7 @@ $pedido= new Pedido();
           }
          ?>
          <input type="submit" name="Envar edido" value="Enviar pedido">
+       </fieldset>
       </form>
       <?php
       //comprobamos que los campos estan rellenados
