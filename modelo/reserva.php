@@ -20,11 +20,12 @@ class Reserva extends db
     //Realizamos la consulta
     $resultado=$this->realizarConsulta($sql);
     if($resultado!=false){
-      //Recogemos el ultimo pedido insertado
+      //Recogemos la ultima reserva insertada
       $sql="SELECT * from reserva ORDER BY id DESC";
       //Realizamos la consulta
       $resultado=$this->realizarConsulta($sql);
       if($resultado!=false){
+        //sacamos el resultado con un fetch_assoc
         return $resultado->fetch_assoc();
       }else{
         return null;

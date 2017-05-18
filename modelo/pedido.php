@@ -35,7 +35,9 @@ function hacerPedido($usuario, $fecha){
   }
 }
 
+//funcion para insertar el pedido con lo que quiere en la tabla pedido_carta
 function hacerPedido_carta($pedido, $carta){
+  //realizamos la consuta y la guardamos en $sql
   $sql="INSERT INTO carta_pedido(id_pedido, id_carta) VALUES (".$pedido.", ".$carta.")";
   //Realizamos la consulta
   $resultado=$this->realizarConsulta($sql);
