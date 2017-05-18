@@ -46,15 +46,20 @@ $pedido= new Pedido();
          <input type="submit" name="Envar edido" value="Enviar pedido">
       </form>
       <?php
-      var_dump($_POST['carta']);
         if (isset($_POST['fecha'])) {
           $pedidoregistrado=$pedido->hacerPedido($_COOKIE['id_usuario'], $_POST['fecha']);
           if ($pedidoregistrado==null) {
             echo "Ha ocurrido un error al hacer el pedido.";
           }else {
-            echo "Pedido registrado. <br>";
-            echo "Fecha: " .$pedidoregistrado['fecha'] ."<br>";
-            echo "Usuario: " .$_SESSION['usuario'] ."<br>";
+            foreach ($_POST['carta'] as $carta) {
+              $cartaregistrada=$pedido->hacerPedido_carta($pedidoregistrado['id'], $carta);
+              if ($cartaregistrada==null) {
+                echo "Error al registrar los productos de la carta deseados.";
+              }
+            }
+            echo "Pedido registrado <br><br>";
+            echo "Usuario: " .$_SESSION['usuario'] ."<br><br>";
+            echo "Fecha: " .$pedidoregistrado['fecha'] ."<br><br>";
           }
 
         }

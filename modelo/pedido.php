@@ -35,6 +35,17 @@ function hacerPedido($usuario, $fecha){
   }
 }
 
+function hacerPedido_carta($pedido, $carta){
+  $sql="INSERT INTO carta_pedido(id_pedido, id_carta) VALUES (".$pedido.", ".$carta.")";
+  //Realizamos la consulta
+  $resultado=$this->realizarConsulta($sql);
+  if($resultado!=false){
+    return true;
+  }else{
+    return null;
+  }
+}
+
 }
 
 
