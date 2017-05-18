@@ -35,7 +35,7 @@
           Usuario:<input type="text" name="usuario" value=""><br><br>
           Contraseña:<input type="password" name="pass" value=""><br><br>
         </fieldset>
-        <input type="submit" name="login" value="login">
+        <input type="submit" name="Iniciar sesion" value="Iniciar sesion">
       </form>
     <?php
     //login contra la base de datos
@@ -54,7 +54,7 @@
           echo "Usuario logueado";
           $sesion->addUsuario($registrado['usuario']);
           setcookie("id_usuario", $registrado['id'], time()+86400);
-          header('Location: index.html');
+          header('Location: index.php');
         }else {
           echo "Las contraseñas no coinciden";
         }
