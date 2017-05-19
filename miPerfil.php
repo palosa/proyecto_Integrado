@@ -59,7 +59,7 @@ if (isset($_SESSION["usuario"])==false) {
          ?>
       </fieldset>
       <fieldset>
-        <legend>Reservas pendientes.</legend>
+        <legend>Reservas pendientes</legend>
         <?php
           $reservaspendientes=$reserva->mostrarReserva(date("Y-m-d"), $_COOKIE['id_usuario']);
           foreach ($reservaspendientes as $reserva) {
@@ -73,7 +73,6 @@ if (isset($_SESSION["usuario"])==false) {
          ?>
       </fieldset>
     </article>
-
    </body>
  </html>
 <?php
