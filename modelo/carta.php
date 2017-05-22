@@ -13,9 +13,9 @@ class Carta extends db
   {
     parent::__construct();
   }
-  function mostrarCarta(){
+  function mostrarCarta($tipo){
         //Construimos la consulta
-        $sql="SELECT * from carta";
+        $sql="SELECT * from carta  WHERE tipo='".$tipo."'";
         //Realizamos la consulta
         $resultado=$this->realizarConsulta($sql);
         if($resultado!=null){
@@ -29,21 +29,26 @@ class Carta extends db
           return null;
         }
       }
-
-
-
-
+      function mostrarTipo(){
+            //Construimos la consulta
+            $sql="SELECT DISTINCT (tipo) from carta";
+            //Realizamos la consulta
+            $resultado=$this->realizarConsulta($sql);
+            if($resultado!=null){
+              //Montamos la tabla de resultado
+              $tabla=[];
+              while($fila=$resultado->fetch_assoc()){
+                $tabla[]=$fila;
+              }
+              return $tabla;
+            }else{
+              return null;
+            }
+          }
 
 
 
 
 
 }
-
-
-
-
-
-
-
  ?>
