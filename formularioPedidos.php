@@ -62,6 +62,7 @@ $pedido= new Pedido();
           }
          ?>
          <input type="submit" name="Envar edido" value="Enviar pedido">
+         <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
        </fieldset>
       </form>
       <?php
