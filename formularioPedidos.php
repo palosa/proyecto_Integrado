@@ -53,8 +53,8 @@ $pedido= new Pedido();
         <fieldset>
           <legend>Realiza un pedido</legend>
         <!--Formulario para el registro de los pedidos -->
-        Fecha: <input type="date" name="fecha" value=""><br><br>
         <?php
+        echo "Fecha: <input type='date' name='fecha' value=".date('Y-m-d')." readonly><br><br>";
           $tabla=$carta->mostrarCarta();
           foreach ($tabla as $fila) {
             echo "<input type='checkbox' name='carta[]' value='".$fila['id']."'> ".$fila['nombre'].": " .$fila['descripcion'] .".";
@@ -62,6 +62,7 @@ $pedido= new Pedido();
           }
          ?>
          <input type="submit" name="Envar edido" value="Enviar pedido">
+         <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
        </fieldset>
       </form>
       <?php

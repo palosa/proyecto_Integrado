@@ -35,9 +35,9 @@ class Reserva extends db
     }
   }
 
-  function mostrarReserva(){
+  function mostrarReserva($fecha, $usuario){
         //Construimos la consulta
-        $sql="SELECT fecha, hora, personas from reserva";
+        $sql="SELECT * from reserva WHERE fecha>='".$fecha."' AND user= " .$usuario;
         //Realizamos la consulta
         $resultado=$this->realizarConsulta($sql);
         if($resultado!=null){

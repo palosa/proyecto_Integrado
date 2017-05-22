@@ -3,9 +3,8 @@ include 'seguridad/seguridad.php';
 include '/modelo/reserva.php';
 include '/modelo/usuario.php';
 $sesion=new Seguridad();
-$usario=new Usuario();
+$usuario=new Usuario();
 $reserva=new Reserva();
-
 
 if (isset($_SESSION["usuario"])==false) {
   //si no esta iniciada lo enviamos a login para que la inicie
@@ -43,25 +42,37 @@ if (isset($_SESSION["usuario"])==false) {
      <li><a href="miPerfil.php">Mi Perfil</a></li>
    </ul>
  </nav>
-
-
-     <article class="article">
-         <table border="1">
-           <tr>
-             <th>Fecha</th>
-             <th>Hora</th>
-             <th>Nº personas</th>
-           </tr>
-           <?php foreach ($reserva as  $fila):?>
-           <tr>
-             <td><?= $fila['fecha'] ?></td>
-             <td><?= $fila['hora'] ?></td>
-             <td><?= $fila['personas'] ?></td>
-           </tr>
-         <?php endforeach; ?>
-         </table>
-         </article>
-
+    <article class="article">
+      <fieldset>
+        <legend>Datos personales</legend>
+        <?php
+          $datospersonales=$usuario->MiPerfil($_SESSION['usuario']);
+          foreach ($datospersonales as $datos) {
+            echo "Nombre: " .$datos['nombre'] ."<br><br>";
+            echo "Apellidos: ".$datos['apellidos'] ."<br><br>";
+            echo "Usuario: ".$datos['usuario'] ."<br><br>";
+            echo "Telefono: ".$datos['telefono'] ."<br><br>";
+            echo "DNI: ".$datos['dni'] ."<br><br>";
+            echo "Dirección: ".$datos['direccion'] ."<br><br>";
+            echo "<a href='actualizarusuario.php?nombre=".$datos['nombre']."&apellidos=".$datos['apellidos']."&usuario=".$datos['usuario']."&telefono=".$datos['telefono']."&dni=".$datos['dni']."&direccion=".$datos['direccion']."'>Actualizar tus datos.</a>";
+          }
+         ?>
+      </fieldset>
+      <fieldset>
+        <legend>Reservas pendientes</legend>
+        <?php
+          $reservaspendientes=$reserva->mostrarReserva(date("Y-m-d"), $_COOKIE['id_usuario']);
+          foreach ($reservaspendientes as $reserva) {
+            echo "Fecha: " .$reserva['fecha'] ."<br><br>";
+            echo "Hora: " .$reserva['hora'] ."<br><br>";
+            echo "Numero de personas: " .$reserva['personas'] ."<br><br>";
+            echo "<a href='actualizarreserva.php?fecha=".$reserva['fecha']."&hora=".$reserva['fecha']."&personas=".$reserva['personas']."'>Cambiar reserva</a>";
+            echo "<a>&nbsp;&nbsp;&nbsp;</a>";
+            echo "<a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a>";
+          }
+         ?>
+      </fieldset>
+    </article>
    </body>
  </html>
 <?php
