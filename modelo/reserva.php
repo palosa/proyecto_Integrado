@@ -52,6 +52,18 @@ class Reserva extends db
         }
       }
 
+
+      public function borrarReserva($id)
+        {
+          $sql="DELETE FROM reserva WHERE id=".$id."";
+          echo $sql;
+          $borrarreserva=$this->realizarConsulta($sql);
+          if ($borrarreserva=!NULL) {
+            return true;
+          }else {
+            return false;
+          }
+        }
 }
 
 
