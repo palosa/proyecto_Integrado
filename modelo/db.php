@@ -5,9 +5,9 @@
 class db
 {
   //Atributos necesarios para la conexion
-  private $host="localhost";
-  private $user="root";
-  private $pass="";
+  private $host="54.203.140.94";
+  private $user="admin";
+  private $pass="7sec121.K";
   private $db_name="foodyfood";
   //Conector
   private $conexion;
