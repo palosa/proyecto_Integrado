@@ -66,9 +66,9 @@ if (isset($_SESSION["usuario"])==false) {
             echo "Fecha: " .$reserva['fecha'] ."<br><br>";
             echo "Hora: " .$reserva['hora'] ."<br><br>";
             echo "Numero de personas: " .$reserva['personas'] ."<br><br>";
-            echo "<a href='actualizarreserva.php?fecha=".$reserva['fecha']."&hora=".$reserva['fecha']."&personas=".$reserva['personas']."'>Cambiar reserva</a>";
+            echo "<a href='actualizarreserva.php?fecha=".$reserva['fecha']."&hora=".$reserva["hora"]."&personas=".$reserva['personas']."&id=".$reserva['id']."'>Cambiar reserva</a>";
             echo "<a>&nbsp;&nbsp;&nbsp;</a>";
-            echo "<a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a>";
+            echo "<a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a><br><br>";
           }
          ?>
       </fieldset>

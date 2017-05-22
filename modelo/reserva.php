@@ -64,6 +64,18 @@ class Reserva extends db
             return false;
           }
         }
+
+        public function ActualizarReserva($fecha,$hora,$personas,$id){
+
+          $sql="UPDATE reserva SET fecha='".$fecha."', hora='".$hora."', personas=".$personas." where id=".$id."";
+          var_dump($sql);
+          $actualizarreserva=$this->realizarConsulta($sql);
+          if ($actualizarreserva=!false) {
+            return true;
+          }else {
+            return false;
+          }
+        }
 }
 
 
