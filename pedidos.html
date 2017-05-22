@@ -42,14 +42,16 @@
 
 <h2>Distribuidores</h2>
 
-<input type="text" class="myInput"id="nameInput" onkeyup="filter()" placeholder="Busca por productos.." title="Type in a name">
-<input type="text" class="myInput"id="countryInput" onkeyup="filter()" placeholder="Busca por distribuidores.." title="Type in a country">
+<input type="text" class="myInput"id="productoInput" onkeyup="filter()" placeholder="Busca por producto.." title="Type in a producto">
+<input type="text" class="myInput"id="proveedorInput" onkeyup="filter()" placeholder="Busca por proveedor.." title="Type in a proveedor">
+<input type="text" class="myInput"id="fechaInput" onkeyup="filter()" placeholder="Busca por fecha.." title="Type in a fecha">
 
 
-<table id="myTable">
+<table id="productos">
   <tr class="header">
-    <th style="width:60%;">Name</th>
-    <th style="width:40%;">Country</th>
+    <th style="width:33.33%;">producto</th>
+    <th style="width:33.33%;">proveedor</th>
+    <th style="width:33.33%;">fecha</th>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
@@ -87,14 +89,14 @@
 
 <script>
 
-  var nameInput, countryInput, table, trs, tds, i;
+  var productoInput, proveedorInput, fechaInput, table, trs, tds, i;
 
   var data;
   var result;
 
   function getData(){
 
-    table = document.querySelector("#myTable");
+    table = document.querySelector("#productos");
     trs = table.querySelectorAll("tr");
 
     data = { rows: [] };
@@ -105,8 +107,9 @@
 
 		data.rows.push({
         	el: trs[i],
-            name: tds[0].innerHTML.trim(),
-            country: tds[1].innerHTML.trim(),
+            producto: tds[0].innerHTML.trim(),
+            proveedor: tds[1].innerHTML.trim(),
+            fecha: tds[2].innerHTML.trim(),
         });
     }
 
@@ -114,29 +117,34 @@
 
   function filter() {
 
-    nameInput = document.querySelector("#nameInput");
-    countryInput = document.querySelector("#countryInput");
+    productoInput = document.querySelector("#productoInput");
+    proveedorInput = document.querySelector("#proveedorInput");
+    fechaInput = document.querySelector("#fechaInput");
 
-    var containsName;
-    var containsCountry;
+    var containsproducto;
+    var containsproveedor;
+    var containsfecha;
 
     result = { matches: [] }
 
     for(i = 0; i < data.rows.length; i++) {
 
-		containsName = data.rows[i]
-        .name.toLowerCase().includes(nameInput.value.toLowerCase());
-        containsCountry = data.rows[i]
-        .country.toLowerCase().includes(countryInput.value.toLowerCase());
+		containsproducto = data.rows[i]
+        .producto.toLowerCase().includes(productoInput.value.toLowerCase());
+        containsproveedor = data.rows[i]
+        .proveedor.toLowerCase().includes(proveedorInput.value.toLowerCase());
+        containsfecha = data.rows[i]
+        .fecha.toLowerCase().includes(fechaInput.value.toLowerCase());
 
-      if(containsName && containsCountry) {
+      if(containsproducto && containsproveedor && containsfecha) {
 
         data.rows[i].el.style.display = "";
 
         // Store result for ajax request
         result.matches.push( {
-        	name: data.rows[i].name,
-            country: data.rows[i].country,
+        	producto: data.rows[i].producto,
+            proveedor: data.rows[i].proveedor,
+            fecha: data.rows[i].fecha,
         });
 
       }else {
