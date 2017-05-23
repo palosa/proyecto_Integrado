@@ -49,10 +49,18 @@ $pedido= new Pedido();
     </nav>
     <!--En el article va todo el cuerpo de la pagina -->
     <article class="article">
+      <div class="form-pedidos">
+
+
       <form class="" action="formularioPedidos.php" method="post">
         <fieldset>
           <legend>Realiza un pedido</legend>
         <!--Formulario para el registro de los pedidos -->
+<<<<<<< HEAD
+        Fecha: <input type="date" name="fecha" value=""><br><br>
+
+=======
+>>>>>>> 33b3e8e898273c5a177a70f4faf15db7ebcb6283
         <?php
         echo "Fecha: <input type='date' name='fecha' value=".date('Y-m-d')." readonly><br><br>";
           $tabla=$carta->mostrarCarta();
@@ -61,10 +69,15 @@ $pedido= new Pedido();
 
           }
          ?>
+<<<<<<< HEAD
+        <br><br> <input type="submit" name="Envar edido" value="Enviar pedido">
+=======
          <input type="submit" name="Envar edido" value="Enviar pedido">
          <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
        </fieldset>
+>>>>>>> 33b3e8e898273c5a177a70f4faf15db7ebcb6283
       </form>
+      </div>
       <?php
       //comprobamos que los campos estan rellenados
         if (isset($_POST['fecha'])) {
