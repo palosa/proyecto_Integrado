@@ -1,7 +1,13 @@
 body{
+  margin:5px;
   margin: 0;
+
   width: 100%;
   background-color:#FFFFF0;
+  background-image: url("../images/background.png")
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 header div a{
   float: right;
@@ -14,8 +20,12 @@ margin: 10px;
 float: left;
 }
 .banner{
+
+  width: 100%;
+
   margin: 0 auto;
   width: 1270px;
+
   height: 200px;
   border: 3px ;
   background-image: url("../images/banner.png");
@@ -51,6 +61,15 @@ li a {
 li a:hover {
     background-color: #FFBF00;
 }
+li a:active {
+    background-color: yellow;
+}
+input:visited{
+    background-color: yellow;
+}
+textarea:hover {
+    background-color: #FFBF00;
+}
 footer{
 
   width: 100%;
@@ -79,7 +98,7 @@ input:hover{
     background-color: #FFBF00;
 }
 input{
-  border-radius: 10px ;
+  border-radius: 10px;
   color: grey;
   display: block;
 }
@@ -117,10 +136,7 @@ div.centrar table{
   margin-top: 20px;
   margin-bottom: 20px;
   border:10px solid #FFBF00;
-
   text-align: left;
-
-
 }
 
 .foto-comida{
@@ -131,4 +147,29 @@ div.centrar table{
 strong.nosotros{
   color: orange;
   font-family: fantasy;
+}
+.enviar-sujerencias{
+  border:10px solid #FFBF00;
+  height: 450px;
+  width: 300px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 420px;
+}
+.form-reservas{
+  border:10px solid #FFBF00;
+  padding: 20px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+.form-pedidos{
+  border:10px solid #FFBF00;
+  padding: 20px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
