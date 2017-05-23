@@ -13,7 +13,24 @@ class Carta extends db
   {
     parent::__construct();
   }
-  function mostrarCarta($tipo){
+
+  function mostrarCarta(){
+        //Construimos la consulta
+        $sql="SELECT * from carta ";
+        //Realizamos la consulta
+        $resultado=$this->realizarConsulta($sql);
+        if($resultado!=null){
+          //Montamos la tabla de resultado
+          $tabla=[];
+          while($fila=$resultado->fetch_assoc()){
+            $tabla[]=$fila;
+          }
+          return $tabla;
+        }else{
+          return null;
+        }
+      }
+  function mostrarCartatipo($tipo){
         //Construimos la consulta
         $sql="SELECT * from carta  WHERE tipo='".$tipo."'";
         //Realizamos la consulta
