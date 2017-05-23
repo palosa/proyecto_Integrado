@@ -63,9 +63,9 @@ class Usuario extends db
       return null;
     }
   }
-  public function ActualizarMiPerfil($usuario, $nombre, $apellidos)
+  public function ActualizarMiPerfil($usuario, $nombre, $apellidos, $telefono, $dni, $direccion)
   {
-    $sql="UPDATE users SET nombre='" .$nombre ."', apellidos='" .$apellidos ."' WHERE usuario='" .$usuario ."'";
+    $sql="UPDATE users SET nombre='" .$nombre ."', apellidos='" .$apellidos ."', telefono=".$telefono.", dni='".$dni."', direccion='".$direccion."' WHERE usuario='" .$usuario ."'";
     $actualizarperfil=$this->realizarConsulta($sql);
     if ($actualizarperfil=!false) {
       return true;

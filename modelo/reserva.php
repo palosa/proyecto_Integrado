@@ -35,6 +35,47 @@ class Reserva extends db
     }
   }
 
+  function mostrarReserva($fecha, $usuario){
+        //Construimos la consulta
+        $sql="SELECT * from reserva WHERE fecha>='".$fecha."' AND user= " .$usuario;
+        //Realizamos la consulta
+        $resultado=$this->realizarConsulta($sql);
+        if($resultado!=null){
+          //Montamos la tabla de resultado
+          $tabla=[];
+          while($fila=$resultado->fetch_assoc()){
+            $tabla[]=$fila;
+          }
+          return $tabla;
+        }else{
+          return null;
+        }
+      }
+
+
+      public function borrarReserva($id)
+        {
+          $sql="DELETE FROM reserva WHERE id=".$id."";
+          echo $sql;
+          $borrarreserva=$this->realizarConsulta($sql);
+          if ($borrarreserva=!NULL) {
+            return true;
+          }else {
+            return false;
+          }
+        }
+
+        public function ActualizarReserva($fecha,$hora,$personas,$id){
+
+          $sql="UPDATE reserva SET fecha='".$fecha."', hora='".$hora."', personas=".$personas." where id=".$id."";
+          var_dump($sql);
+          $actualizarreserva=$this->realizarConsulta($sql);
+          if ($actualizarreserva=!false) {
+            return true;
+          }else {
+            return false;
+          }
+        }
 }
 
 

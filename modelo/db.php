@@ -5,9 +5,9 @@
 class db
 {
   //Atributos necesarios para la conexion
-  private $host="localhost";
-  private $user="root";
-  private $pass="";
+  private $host="54.203.140.94";
+  private $user="admin";
+  private $pass="7sec121.K";
   private $db_name="foodyfood";
   //Conector
   private $conexion;
@@ -20,6 +20,8 @@ class db
       if ($this->conexion->connect_errno) {
         $this->error=true;
         $this->error_msj="No se ha podido realizar la conexion a la bd. Revisar base de datos o parámetros";
+      }else{
+        $this->conexion->set_charset("utf8");
       }
   }
   //Funcion para saber si hay error en la conexion

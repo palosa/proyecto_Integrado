@@ -49,13 +49,17 @@
     <!--Formulario de registro de la reserva -->
     <div class="form-reservas">
     <form class="" action="formularioreservas.php" method="post">
-      Fecha: <input type="date" name="fecha" value=""><br><br>
+      <fieldset>
+        <legend>Realiza tu reserva</legend>
+      Fecha: <input type="date" name="fecha" value= ""><br><br>
       Hora: <input type="time" name="hora" value=""><br><br>
       Numero de personas: <input type="number" name="personas" value="" min="1" max="100">
       <input type="submit" name="Reservar" value="Reservar">
+    </fieldset>
     </form>
     </div>
     <?php
+    date('Y-m-d');
     //comprobamos que se han rellenado todos los campos
       if (isset($_POST['fecha']) && isset($_POST['hora']) && isset($_POST['personas'])) {
         //llamamos a la funcion de registro de la reserva.
