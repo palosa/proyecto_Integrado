@@ -1,9 +1,7 @@
 body{
-<<<<<<< HEAD
   margin:5px;
-=======
   margin: 0;
->>>>>>> 33b3e8e898273c5a177a70f4faf15db7ebcb6283
+
   width: 100%;
   background-color:#FFFFF0;
   background-image: url("../images/background.png")
@@ -22,12 +20,12 @@ margin: 10px;
 float: left;
 }
 .banner{
-<<<<<<< HEAD
+
   width: 100%;
-=======
+
   margin: 0 auto;
   width: 1270px;
->>>>>>> 33b3e8e898273c5a177a70f4faf15db7ebcb6283
+
   height: 200px;
   border: 3px ;
   background-image: url("../images/banner.png");
