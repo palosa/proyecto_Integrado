@@ -39,6 +39,7 @@
     $letter = new Carta();
 
     $tipo = $letter->mostrarTipo();
+
     if (isset($_POST) && (!empty($_POST))){
       $carta = $letter->mostrarCarta($_POST['tipo']);
 
