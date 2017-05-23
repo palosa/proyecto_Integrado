@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="css/css.css">
   </head>
   <body>
+    <!--Header de la pagina con el banner y el logo -->
     <header>
       <div class="banner">
       <img class="imagenlogo"src="images/logo.PNG" alt="">
     <div class="enlaceBanner">
       <ul>
       <?php
+      //enlaces de cerrar/iniciar sesion. El de cerrar sesion solo sale si estas iniciado y al reves.
       include 'seguridad/seguridad.php';
       $sesion=new Seguridad();
 
@@ -27,6 +29,7 @@
       </div>
     </header>
     <nav>
+      <!--MENU -->
       <ul>
         <li><a href="index.php">Inicio</a></li>
         <li><a href="formularioPedidos.php">Pedido</a></li>
@@ -36,9 +39,11 @@
         <li><a href="miPerfil.php">Mi Perfil</a></li>
       </ul>
     </nav>
+    <!--Cuerpo de la pagina -->
     <article class="article">
     <form class="" action="actualizarusuario.php" method="post">
       <fieldset>
+        <!--Formulario de actualizar los datos de tu usuario -->
       <legend>Actualizar datos</legend>
       Usuario: <input type="text" name="user" value="<?=$_GET["usuario"]?>" readonly> <br><br>
       Nombre: <input type="text" name="nombre" value="<?=$_GET["nombre"]?>"><br><br>
@@ -50,6 +55,7 @@
     </fieldset>
     </form>
     <?php
+    //incluimos usuario.php y llamamos a la funcion de actualizar los datos
     include '/modelo/usuario.php';
     $usuario=new Usuario();
     if (isset($_POST['user']) && isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['dni']) && isset($_POST['telefono']) && isset($_POST['direccion'])) {
@@ -61,6 +67,7 @@
     }
      ?>
     </article>
+    <!--Footer de la pagina con enlaces a las redes sociales -->
     <footer>
       <div class="text">
       <p class="text-footer">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
