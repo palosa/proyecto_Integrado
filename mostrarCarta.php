@@ -43,7 +43,7 @@
     $tipo = $letter->mostrarTipo();
 
     if (isset($_POST) && (!empty($_POST))){
-      $carta = $letter->mostrarCarta($_POST['tipo']);
+      $carta = $letter->mostrarCartaTipo($_POST['tipo']);
 
       }
       ?>
@@ -52,6 +52,7 @@
         <select class="" name="tipo">
 
           <?php foreach ($tipo as  $value): ?>
+
           <option value="<?= $value['tipo']; ?>"><?= $value['tipo']; ?></option>
           <?php endforeach; ?>
           </select>

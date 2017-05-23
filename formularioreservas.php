@@ -22,16 +22,18 @@
     <header>
     <div class="banner">
     </a><img class="imagenlogo"src="images/logo.PNG" alt="">
-
+    <div class="enlaceBanner">
+      <ul>
     <?php
       if (isset($_SESSION['usuario'])) {
-        echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
+        echo "<li><a href='logout.php'>Cerrar sesion</a></li>";
       }else {
-        echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
-        <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
+        echo "<li><a href='login.php'>Iniciar sesion</a>
+        <a href='registro.php'>Registro</a></li>";
       }
      ?>
-
+   </ul>
+   </div>
     </div>
     </header>
     <nav>
@@ -80,7 +82,7 @@
    </article>
    <footer>
      <div class="text">
-     <p class="text-footer">Derechos reservados a FoodyFood©</p>
+     <p class="text-footer">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
      <a href="https://www.facebook.com/FoodyFood-1205351362909040/" target="nueva"><img class="footer-icon" src="images/facebook.png" alt=""></a>
      <a href="https://www.instagram.com/foodyfood.florida/" target="nueva"><img class="footer-icon" src="images/insta.png" alt=""></a>
        <a href="https://www.twitter.com/foodyfood_flori" target="nueva"><img class="footer-icon" src="images/tuiter.png" alt=""></a>
