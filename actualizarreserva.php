@@ -12,6 +12,7 @@
     <div class="enlaceBanner">
       <ul>
       <?php
+      //menu de iniciar/cerrar sesion
       include 'seguridad/seguridad.php';
       $sesion=new Seguridad();
 
@@ -26,6 +27,7 @@
        </div>
       </div>
     </header>
+    <!--MENU -->
     <nav>
       <ul>
         <li><a href="index.php">Inicio</a></li>
@@ -36,9 +38,11 @@
         <li><a href="miPerfil.php">Mi Perfil</a></li>
       </ul>
     </nav>
+    <!--Cuerpo de la pagina -->
     <article class="article">
     <form class="" action="actualizarreserva.php" method="post">
       <fieldset>
+        <!--Formulario de actualizar datos. -->
       <legend>Actualizar datos</legend>
       Fecha: <input type="date" name="fecha" value="<?=$_GET["fecha"]?>"> <br><br>
       Hora: <input type="time" name="hora" value="<?=$_GET["hora"]?>"><br><br>
@@ -48,6 +52,7 @@
     </fieldset>
     </form>
     <?php
+    //incluimos reserva.php y llamamo a la funcion que nos actualizara los datos.
     include '/modelo/reserva.php';
     $reserva=new Reserva();
     if (isset($_POST['fecha']) && isset($_POST['hora']) && isset($_POST['personas'])) {
@@ -59,6 +64,7 @@
     }
      ?>
     </article>
+    <!--Footer de la pagina, con enlaces a las redes sociales. -->
     <footer>
       <div class="text">
       <p class="text-footer">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
