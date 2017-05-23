@@ -23,7 +23,7 @@
       $actualizarReserva=$reserva->ActualizarReserva($_POST['fecha'], $_POST['hora'], $_POST['personas'], $_POST["id"]);
       var_dump($actualizarReserva);
       if ($actualizarReserva==true) {
-        //header('Location: miPerfil.php');
+        header('Location: miPerfil.php');
       }
     }
      ?>
