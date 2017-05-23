@@ -25,16 +25,18 @@ $pedido= new Pedido();
     <header>
       <div class="banner">
       <img class="imagenlogo"src="images/logo.PNG" alt="">
-
+      <div class="enlaceBanner">
+        <ul>
       <?php
         if (isset($_SESSION['usuario'])) {
-          echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
+          echo "<li><a href='logout.php'>Cerrar sesion</a></li>";
         }else {
-          echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
-          <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
+          echo "<li><a href='login.php'>Iniciar sesion</a>
+          <a href='registro.php'>Registro</a></li>";
         }
        ?>
-
+     </ul>
+     </div>
       </div>
     </header>
     <nav>
@@ -56,11 +58,6 @@ $pedido= new Pedido();
         <fieldset>
           <legend>Realiza un pedido</legend>
         <!--Formulario para el registro de los pedidos -->
-<<<<<<< HEAD
-        Fecha: <input type="date" name="fecha" value=""><br><br>
-
-=======
->>>>>>> 33b3e8e898273c5a177a70f4faf15db7ebcb6283
         <?php
         echo "Fecha: <input type='date' name='fecha' value=".date('Y-m-d')." readonly><br><br>";
           $tabla=$carta->mostrarCarta();
@@ -69,13 +66,12 @@ $pedido= new Pedido();
 
           }
          ?>
-<<<<<<< HEAD
-        <br><br> <input type="submit" name="Envar edido" value="Enviar pedido">
-=======
-         <input type="submit" name="Envar edido" value="Enviar pedido">
+
+        <br><br>
+         <input type="submit" name="Envar pedido" value="Enviar pedido">
          <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
        </fieldset>
->>>>>>> 33b3e8e898273c5a177a70f4faf15db7ebcb6283
+
       </form>
       </div>
       <?php
@@ -107,7 +103,7 @@ $pedido= new Pedido();
   <!--Footer de la pagina -->
   <footer>
     <div class="text">
-    <p class="text-footer">Derechos reservados a FoodyFood©</p>
+    <p class="text-footer">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
     <a href="https://www.facebook.com/FoodyFood-1205351362909040/" target="nueva"><img class="footer-icon" src="images/facebook.png" alt=""></a>
     <a href="https://www.instagram.com/foodyfood.florida/" target="nueva"><img class="footer-icon" src="images/insta.png" alt=""></a>
       <a href="https://www.twitter.com/foodyfood_flori" target="nueva"><img class="footer-icon" src="images/tuiter.png" alt=""></a>
