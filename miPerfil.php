@@ -21,6 +21,7 @@ if (isset($_SESSION["usuario"])==false) {
    <body>
  <header>
    <div class="banner">
+  <div class="enlaceBanner">
    <img class="imagenlogo"src="images/logo.PNG" alt="">
    <?php
      if (isset($_SESSION['usuario'])) {
@@ -30,6 +31,7 @@ if (isset($_SESSION["usuario"])==false) {
        <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
      }
     ?>
+    </div>
    </div>
  </header>
  <nav>
