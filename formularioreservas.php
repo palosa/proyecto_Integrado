@@ -47,6 +47,7 @@
     <article class="article">
 
     <!--Formulario de registro de la reserva -->
+    <div class="form-reservas">
     <form class="" action="formularioreservas.php" method="post">
       <fieldset>
         <legend>Realiza tu reserva</legend>
@@ -56,6 +57,7 @@
       <input type="submit" name="Reservar" value="Reservar">
     </fieldset>
     </form>
+    </div>
     <?php
     date('Y-m-d');
     //comprobamos que se han rellenado todos los campos

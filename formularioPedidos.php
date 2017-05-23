@@ -49,6 +49,9 @@ $pedido= new Pedido();
     </nav>
     <!--En el article va todo el cuerpo de la pagina -->
     <article class="article">
+      <div class="form-pedidos">
+
+
       <form class="" action="formularioPedidos.php" method="post">
         <fieldset>
           <legend>Realiza un pedido</legend>
@@ -61,10 +64,14 @@ $pedido= new Pedido();
 
           }
          ?>
-         <input type="submit" name="Envar edido" value="Enviar pedido">
+
+        <br><br>
+         <input type="submit" name="Envar pedido" value="Enviar pedido">
          <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
        </fieldset>
+
       </form>
+      </div>
       <?php
       //comprobamos que los campos estan rellenados
         if (isset($_POST['fecha'])) {
