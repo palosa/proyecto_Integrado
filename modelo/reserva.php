@@ -66,9 +66,9 @@ class Reserva extends db
         }
 
         public function ActualizarReserva($fecha,$hora,$personas,$id){
-
-          $sql="UPDATE reserva SET fecha='".$fecha."', hora='".$hora."', personas=".$personas." where id=".$id."";
-          var_dump($sql);
+          var_dump($id);
+          $sql="UPDATE reserva SET fecha='".$fecha."', hora='".$hora."', personas=".$personas." WHERE id=".$id."";
+          echo $sql;
           $actualizarreserva=$this->realizarConsulta($sql);
           if ($actualizarreserva=!false) {
             return true;
