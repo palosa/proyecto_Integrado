@@ -92,9 +92,11 @@ $pedido= new Pedido();
               }
             }
             //si todo va bien sacamos por pantalla la reserva hecha
-            echo "Pedido registrado <br><br>";
-            echo "Usuario: " .$_SESSION['usuario'] ."<br><br>";
-            echo "Fecha: " .$pedidoregistrado['fecha'] ."<br><br>";
+            ?>
+            <script type="text/javascript">
+              alert("Pedido registrado con exito.");
+            </script>
+            <?php
           }
 
         }
