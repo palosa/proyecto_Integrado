@@ -36,7 +36,7 @@
     <table>
           <tr>
             <td><p>De la mano de nuestro chef Massamune os traemos la
-                Comida más tradicional japonesa a Catarroja</p>
+                Comida más tradicional japonesa en Catarroja</p>
             </td>
           </tr>
       <tr>

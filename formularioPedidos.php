@@ -49,9 +49,13 @@ $pedido= new Pedido();
     </nav>
     <!--En el article va todo el cuerpo de la pagina -->
     <article class="article">
+      <div class="form-pedidos">
+
+
       <form class="" action="formularioPedidos.php" method="post">
         <!--Formulario para el registro de los pedidos -->
         Fecha: <input type="date" name="fecha" value=""><br><br>
+
         <?php
           $tabla=$carta->mostrarCarta();
           foreach ($tabla as $fila) {
@@ -59,8 +63,9 @@ $pedido= new Pedido();
 
           }
          ?>
-         <input type="submit" name="Envar edido" value="Enviar pedido">
+        <br><br> <input type="submit" name="Envar edido" value="Enviar pedido">
       </form>
+      </div>
       <?php
       //comprobamos que los campos estan rellenados
         if (isset($_POST['fecha'])) {
