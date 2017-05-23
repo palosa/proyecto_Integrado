@@ -73,6 +73,7 @@ if (isset($_SESSION["usuario"])==false) {
             echo "<a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a><br><br>";
           }
          ?>
+         <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
       </fieldset>
     </article>
    </body>

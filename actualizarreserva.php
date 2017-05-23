@@ -12,6 +12,7 @@
       Fecha: <input type="date" name="fecha" value="<?=$_GET["fecha"]?>"> <br><br>
       Hora: <input type="time" name="hora" value="<?=$_GET["hora"]?>"><br><br>
       Personas: <input type="number" name="personas" value="<?=$_GET["personas"]?>" min="1" max="100"><br><br>
+      <input type="hidden" name="id" value="<?=$_GET["id"]?>">
       <input type="submit" name="Actualizar" value="Actualizar">
     </fieldset>
     </form>
@@ -19,7 +20,7 @@
     include '/modelo/reserva.php';
     $reserva=new Reserva();
     if (isset($_POST['fecha']) && isset($_POST['hora']) && isset($_POST['personas'])) {
-      $actualizarReserva=$reserva->ActualizarReserva($_POST['fecha'], $_POST['hora'], $_POST['personas']);
+      $actualizarReserva=$reserva->ActualizarReserva($_POST['fecha'], $_POST['hora'], $_POST['personas'], $_POST["id"]);
       var_dump($actualizarReserva);
       if ($actualizarReserva==true) {
         header('Location: miPerfil.php');
