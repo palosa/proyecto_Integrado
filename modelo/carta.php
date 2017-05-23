@@ -1,19 +1,13 @@
 <?php
-
 //Incluyo db para la conexion a la base de datos
-
 require_once 'db.php';
-
 //Creamos la clase que extiende de db
-
 class Carta extends db
 {
-
   function __construct()
   {
     parent::__construct();
   }
-
   function mostrarCarta(){
         //Construimos la consulta
         $sql="SELECT * from carta ";
@@ -30,6 +24,8 @@ class Carta extends db
           return null;
         }
       }
+
+      //Funcion mara mostrar la carta dependiendo del tipo que le pasemos
   function mostrarCartatipo($tipo){
         //Construimos la consulta
         $sql="SELECT * from carta  WHERE tipo='".$tipo."'";
@@ -62,6 +58,5 @@ class Carta extends db
               return null;
             }
           }
-
 }
  ?>
