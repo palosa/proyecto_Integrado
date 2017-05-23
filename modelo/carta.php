@@ -46,9 +46,5 @@ class Carta extends db
             }
           }
 
-
-
-
-
 }
  ?>
