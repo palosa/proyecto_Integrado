@@ -38,6 +38,8 @@
   background-color: #f1f1f1;
 }
 </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -72,29 +74,26 @@
 
               <table id="productos">
                 <tr class="header">
-                  <th style="width:33.33%;">producto</th>
-                  <th style="width:33.33%;">proveedor</th>
-                  <th style="width:33.33%;">fecha</th>
+                  <th style="width:33.33%;">Producto</th>
+                  <th style="width:33.33%;">Proveedor</th>
+                  <th style="width:33.33%;">Fecha</th>
                 </tr>
 
                 <?php
 
-                // include "fulana.php";
-                //
-                // $fulana = new Escroto();
-                //
-                // $tabla=$fulana->mostrarProductos();
-                // foreach ($tabla as $fila) {
+              include "modelo/productos.php";
+               $producto = new Productos();
+               $tabla=$producto->MostrarProductos();
+               foreach ($tabla as $fila) {
+               ?>
+               <tr>
+                 <td><?php $fila['producto']; ?></td>
+                 <td><?php $fila['proveedor']; ?></td>
+                 <td><?php $fila['fecha']; ?></td>
+               </tr>
+               <?php
+             }
                 ?>
-
-                <tr>
-                  <td><?php// echo $fila['producto']; ?></td>
-                  <td><?php// echo $fila['proveedor']; ?></td>
-                  <td><?php// echo $fila['fecha']; ?></td>
-                </tr>
-                <?php
-                // }
-                 ?>
               </table>
           </div>
         </div>
@@ -104,7 +103,7 @@
   var productoInput, proveedorInput, fechaInput, table, trs, tds, i;
   var data;
   var result;
-  //-- Aqui hos apañais que tengo sueño --\\
+  //--  --\\
   function getData(){
     table = document.querySelector("#productos");
     trs = table.querySelectorAll("tr");
@@ -153,7 +152,6 @@
   getData();
 </script>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
   </body>
 </html>
