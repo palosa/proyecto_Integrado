@@ -26,6 +26,7 @@
    </div>
   </div>
 </header>
+<!-- Dentro de la etiqueta nav tenemos una lista del menu con los enlaces -->
 <nav>
   <ul>
     <li><a href="index.php">Inicio</a></li>
