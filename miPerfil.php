@@ -47,8 +47,10 @@ if (isset($_SESSION["usuario"])==false) {
    </ul>
  </nav>
     <article class="article">
+      <div class="mi-perfil">
+        <div class="datos-personales">
       <fieldset>
-        <legend>Datos personales</legend>
+        <h2>Datos personales</h2>
         <?php
           $datospersonales=$usuario->MiPerfil($_SESSION['usuario']);
           foreach ($datospersonales as $datos) {
@@ -62,8 +64,10 @@ if (isset($_SESSION["usuario"])==false) {
           }
          ?>
       </fieldset>
+        </div>
+        <div class="reservas-pendientes">
       <fieldset>
-        <legend>Reservas pendientes</legend>
+        <h2>Reservas pendientes</h2>
         <?php
           $reservaspendientes=$reserva->mostrarReserva(date("Y-m-d"), $_COOKIE['id_usuario']);
           foreach ($reservaspendientes as $reserva) {
@@ -72,12 +76,14 @@ if (isset($_SESSION["usuario"])==false) {
             echo "Numero de personas: " .$reserva['personas'] ."<br><br>";
             echo "<a href='actualizarreserva.php?fecha=".$reserva['fecha']."&hora=".$reserva["hora"]."&personas=".$reserva['personas']."&id=".$reserva['id']."'>Cambiar reserva</a>";
             echo "<a>&nbsp;&nbsp;&nbsp;</a>";
-            echo "<a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a><br><br>";
+            echo "<button><a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a><br><br></button>";
           }
          ?>
          <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
       </fieldset>
+      </div>
     </article>
+  </div>
     <footer>
       <div class="text">
       <p class="text-footer">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>

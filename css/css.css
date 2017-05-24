@@ -4,7 +4,7 @@ body{
 
   width: 100%;
   background-color:#FFFFF0;
-  background-image: url("../images/background.png")
+  background-image: url("../images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -37,12 +37,8 @@ margin: 10px;
 float: left;
 }
 .banner{
-
   width: 100%;
-
   margin: 0 auto;
-
-
   height: 200px;
   border: 3px ;
   background-image: url("../images/banner.png");
@@ -111,6 +107,10 @@ width: 50px;
   border: 5px solid orange;
   font-family: fantasy;
 }
+a:focus{
+    background-color: #FFBF00;
+}
+
 input:hover{
     background-color: #FFBF00;
 }
@@ -192,4 +192,38 @@ strong.nosotros{
   margin-top: 20px;
   margin-bottom: 20px;
 
+}
+.mi-perfil a{
+  text-decoration: none;
+}
+.mi-perfil button{
+    background-color: #FFBF00; /* naranja*/
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+  }
+
+.mi-perfil button:hover {
+      background-color: #FE642E;
+}
+.mi-perfil fieldset{
+
+}
+.datos-personales{
+  border:8px solid #FFBF00;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.reservas-pendientes{
+  border:8px solid #FFBF00;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
