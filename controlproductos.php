@@ -53,13 +53,13 @@
 
             <form  action="controlproductos.php" method="post">
               <label for="">Producto</label><br>
-              <input type="text" name="" value=""><br>
+              <input type="text" name="producto" value=""><br>
 
               <label for="">Proveedor</label><br>
-              <input type="text" name="" value=""><br>
+              <input type="text" name="proveedor" value=""><br>
 
               <label for="">Fecha</label><br>
-              <input type="text" name="" value="">
+              <input type="text" name="fecha" value="">
 
               <input type="submit" name="" value="Enviar">
             </form>
