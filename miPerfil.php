@@ -71,12 +71,11 @@ if (isset($_SESSION["usuario"])==false) {
         <?php
           $reservaspendientes=$reserva->mostrarReserva(date("Y-m-d"), $_COOKIE['id_usuario']);
           foreach ($reservaspendientes as $reserva) {
-            echo "Fecha: " .$reserva['fecha'] ."<br><br>";
+            echo "<br>Fecha: " .$reserva['fecha'] ."<br><br>";
             echo "Hora: " .$reserva['hora'] ."<br><br>";
             echo "Numero de personas: " .$reserva['personas'] ."<br><br>";
             echo "<a href='actualizarreserva.php?fecha=".$reserva['fecha']."&hora=".$reserva["hora"]."&personas=".$reserva['personas']."&id=".$reserva['id']."'>Cambiar reserva</a>";
-            echo "<a>&nbsp;&nbsp;&nbsp;</a>";
-            echo "<button><a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a><br><br></button>";
+            echo "<a href='eliminarreserva.php?id=".$reserva['id']."'>Eliminar reserva</a><br><br>";
           }
          ?>
          <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
