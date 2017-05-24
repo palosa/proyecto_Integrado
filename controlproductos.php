@@ -59,7 +59,7 @@
               <input type="text" name="proveedor" value=""><br>
 
               <label for="">Fecha</label><br>
-              <input type="text" name="fecha" value="">
+              <input type="date" name="fecha" value="">
 
               <input type="submit" name="" value="Enviar">
             </form>
