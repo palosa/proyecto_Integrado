@@ -37,7 +37,7 @@
     <li><a href="miPerfil.php">Mi Perfil</a></li>
   </ul>
 </nav>
-<div class="centrar">
+
   <article class="article">
     <table>
           <tr>
@@ -81,7 +81,7 @@
       </tr>
     </table>
   </article>
-</div>
+
 <footer>
   <div class="text">
   <p class="text-footer">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>

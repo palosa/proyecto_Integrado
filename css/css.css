@@ -114,6 +114,9 @@ width: 50px;
 input:hover{
     background-color: #FFBF00;
 }
+input:checked{
+  background-color: yellow;
+}
 input{
   border-radius: 10px;
   color: grey;

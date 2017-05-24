@@ -71,11 +71,11 @@
           echo "Error al registrar la reserva.";
         }else {
           //si ha salido bien lo sacamos por pantalla
-          echo "Reserva registrada. <br><br>";
-          echo "Usuario: " .$_SESSION['usuario'] ."<br><br>";
-          echo "Fecha: " .$_POST['fecha'] ."<br><br>";
-          echo "Hora: " .$_POST['hora'] ."<br><br>";
-          echo "Numero de personas: " .$_POST['personas'] ."<br><br>";
+        ?>
+        <script type="text/javascript">
+          alert("Reserva realizada con exito");
+        </script>
+        <?php
         }
       }
      ?>

@@ -36,21 +36,25 @@
         <li><a href="miPerfil.php">Mi Perfil</a></li>
       </ul>
     </nav>
-    <?php include '/modelo/carta.php';
 
+    <?php
+    //Incluimos el modelo carta.php
+    include '/modelo/carta.php';
+    //Generamos un nuevo objeto de carta
     $letter = new Carta();
-
+    //Utilizamos la funcion para que los valores se gurden en $tipo
     $tipo = $letter->mostrarTipo();
-
+    //Si el $_POST no esta vacio metera los valores de la funcion mostrarCartaTipo
     if (isset($_POST) && (!empty($_POST))){
-      $carta = $letter->mostrarCartaTipo($_POST['tipo']);
+      $carta = $letter->mostrarCartatipo($_POST['tipo']);
 
       }
       ?>
+      <!-- Formulario para elegir el tipo de comida que quieres  -->
       <form class="" action="mostrarCarta.php" method="post">
         <p>Selecionar tipo de comida</p>
         <select class="" name="tipo">
-
+          <!-- foreach para recorrer el array de mostrarTipo para que nos salga una lista depleagble con todos los tipos -->
           <?php foreach ($tipo as  $value): ?>
 
           <option value="<?= $value['tipo']; ?>"><?= $value['tipo']; ?></option>
@@ -60,6 +64,7 @@
       </form>
   <article class="article">
       <table>
+        <!-- Si $_POST no esta vacio hace el foreach para que recorra el array de mostrarCartaTipo para que ponga todos los datos -->
         <?php if (isset($_POST) && (!empty($_POST))): ?>
         <tr>
           <th>Tipo</th>

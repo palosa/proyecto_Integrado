@@ -47,14 +47,13 @@
       if ($resultado==null) {
         echo "Error";
       }else {
-        //si se inserta con exito, sacamos en el formulario los datos que se han insertado.
-        echo "Usuario registrado. <br><br>";
-        echo "<form>Nombre: <input type='text' name='oferta' value=".$resultado['nombre']." readonly><br><br>";
-        echo "Apellidos: <input type='text' name='oferta' value=".$resultado['apellidos']." readonly><br><br>";
-        echo "Usuario: <input type='text' name='oferta' value=".$resultado['usuario']." readonly><br><br>";
-        echo "Telefono: <input type='text' name='oferta' value=".$resultado['telefono']." readonly><br><br>";
-        echo "Direccion: <input type='text' name='oferta' value=".$resultado['direccion']." readonly><br><br>";
-        echo "DNI: <input type='text' name='oferta' value=".$resultado['dni']." readonly><br><br></form>";
+        //si se inserta con exito, sacamos un mensaje i lo llevamos a login.php
+       ?>
+       <script type="text/javascript">
+         alert("Usuario registrado con exito.");
+       </script>
+       <?php
+      header('Location: login.php')
         }
     }else {
      ?>
