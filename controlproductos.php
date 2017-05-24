@@ -44,13 +44,14 @@
   <body>
     <div class="container">
         <ul class="nav nav-pills">
-          <li class="active"><a data-toggle="pill" href="#home">Pedidos</a></li>
+          <li class="active"><a data-toggle="pill" href="#home">Pedido</a></li>
           <li><a data-toggle="pill" href="#menu1">Pedidos Realizados</a></li>
         </ul>
         <div class="tab-content">
 
           <div id="home" class="tab-pane fade in active">
-            <form  action="index.html" method="post">
+
+            <form  action="controlproductos.php" method="post">
               <label for="">Producto</label><br>
               <input type="text" name="" value=""><br>
 
@@ -62,6 +63,14 @@
 
               <input type="submit" name="" value="Enviar">
             </form>
+            <?php
+            if (isset($_POST['producto']) && isset($_POST['proveedor']) && isset($_POST['fecha'])){
+              include '\modelo\productos.php';
+             $producto = new Productos();
+              //llamada a la funcion de insertar usuario en la db
+              $resultado=$producto->insertarproducto($_POST['producto'], $_POST['proveedor'], $_POST['fecha']);
+            }
+             ?>
           </div>
 
           <div id="menu1" class="tab-pane fade">
@@ -99,13 +108,13 @@
         </div>
 
 <script >
-  //-- Creamos las variables --\\
+  //Creamos las variables
   var productoInput, proveedorInput, fechaInput, table, trs, tds, i;
   var data;
   var result;
-  //--  --\\
+
   function getData(){
-    table = document.querySelector("#productos");
+    table = document.querySelector("#producto");
     trs = table.querySelectorAll("tr");
     data = { rows: [] };
     for(i = 1; i < trs.length; i++) {
@@ -151,7 +160,5 @@
   // Initialize data
   getData();
 </script>
-
-
   </body>
 </html>
