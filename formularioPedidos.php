@@ -112,7 +112,6 @@ $pedido= new Pedido();
     </div>
   </footer>
 
-
   </body>
 </html>
 <?php } ?>
