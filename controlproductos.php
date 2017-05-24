@@ -87,9 +87,9 @@
                foreach ($tabla as $fila) {
                ?>
                <tr>
-                 <td><?php $fila['producto']; ?></td>
-                 <td><?php $fila['proveedor']; ?></td>
-                 <td><?php $fila['fecha']; ?></td>
+                 <td><?php echo $fila['producto']; ?></td>
+                 <td><?php echo $fila['proveedor']; ?></td>
+                 <td><?php echo $fila['fecha']; ?></td>
                </tr>
                <?php
              }
