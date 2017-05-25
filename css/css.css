@@ -232,9 +232,10 @@ strong.nosotros{
       background-color: #FFBF00;
       color: rgb(255, 255, 255)
 }
-.mi-perfil fieldset{
-
+ h1{
+  text-align: center;
 }
+
 .datos-personales{
   border:8px solid #FFBF00;
   padding: 20px;

@@ -61,12 +61,12 @@
 
    ?>
 </nav>
-
+<!-- Imagenes y texto del contenido del Index -->
   <article class="article">
     <table>
           <tr>
             <td><p>De la mano de nuestro chef Massamune os traemos la
-                Comida más tradicional japonesa en Catarroja</p>
+                comida más tradicional japonesa en Catarroja</p>
             </td>
           </tr>
       <tr>
@@ -75,7 +75,7 @@
       <tr>
         <tr>
           <td><p>Tras años trabajando en el Izakaya familiar Massamune
-              Quiere ofrecernos la experiencia de comer los ingredientes
+              quiere ofrecernos la experiencia de comer los ingredientes
               más frescos y de la mejor calidad. Para ello ha contado con el</p>
           </td>
         </tr>
@@ -85,8 +85,8 @@
         <td> <p>  mejor equipo posible, grande productos de nuestra tierra y
                   magníficos trabajadores .
                   Nuestra carta cuenta siempre con productos de temporada
-                  Y pescado fresco del día, el cual es mimado y cocinado con amor
-                  Para así sacarle el mejor sabor
+                  Y pescado fresco del día, el cual es mimado y cocinado con amor,
+                  para así sacarle el mejor sabor.
               </p>
         </td>
       </tr>
