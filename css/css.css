@@ -196,12 +196,11 @@ strong.nosotros{
 .mi-perfil a{
   text-decoration: none;
 }
-/* Botones de actualizar perfil*/
-.datos-personales a{
-    background-color: #000000; /* naranja*/
+.mi-perfil button{
+    background-color: #FFBF00; /* naranja*/
     border: none;
     color: white;
-    padding: 15px 10px;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -209,28 +208,9 @@ strong.nosotros{
     cursor: pointer;
     float: left;
   }
-/* hover del boton actualizar */
-.datos-personales a:hover {
-      background-color: #FFBF00;
-      color: rgb(255, 255, 255)
-}
-/* botones de actualizar y eliminar de reservar pendientes*/
-.reservas-pendientes a{
-    background-color: #000000; /* naranja*/
-    border: none;
-    color: white;
-    padding: 15px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    float: left;
-  }
-/*hover de reservar pendientes de eliminar y actualizar*/
-.reservas-pendientes a:hover {
-      background-color: #FFBF00;
-      color: rgb(255, 255, 255)
+
+.mi-perfil button:hover {
+      background-color: #FE642E;
 }
 .mi-perfil fieldset{
 
