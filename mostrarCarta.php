@@ -52,7 +52,7 @@
       ?>
       <!-- Formulario para elegir el tipo de comida que quieres  -->
       <form class="" action="mostrarCarta.php" method="post">
-        <p>Selecionar tipo de comida</p>
+        <h1 class="titulo">Seleción por tipo de comida</h1>
         <select class="" name="tipo">
           <!-- foreach para recorrer el array de mostrarTipo para que nos salga una lista depleagble con todos los tipos -->
           <?php foreach ($tipo as  $value): ?>
