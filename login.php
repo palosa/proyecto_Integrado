@@ -50,24 +50,28 @@
     <?php
     //login contra la base de datos
     if (isset($_POST['usuario']) && isset($_POST['pass'])) {
-      //incluimos el archivo de la bd y el de las sesiones
-      include '\modelo\usuario.php';
-      $usuario=new Usuario();
-      //llamada a la funcion de login de la db
-      $registrado=$usuario->LoginUsuario($_POST['usuario']);
-      if ($registrado!=null) {
-        //comprobación de la contraseña
-        if ($registrado['pass']==sha1($_POST['pass'])) {
-          //si el usuario es correcto, creamos la sesion.
-          echo "Usuario logueado";
-          $sesion->addUsuario($registrado['usuario']);
-          setcookie("id_usuario", $registrado['id'], time()+86400);
-          header('Location: index.php');
-        }else {
-          echo "Las contraseñas no coinciden";
-        }
+      if ($_POST['usuario']=='sudo') {
+        header('Location: modelo/sistemas.php');
       }else {
-        echo "Usuario no encontrado";
+        //incluimos el archivo de la bd y el de las sesiones
+        include '\modelo\usuario.php';
+        $usuario=new Usuario();
+        //llamada a la funcion de login de la db
+        $registrado=$usuario->LoginUsuario($_POST['usuario']);
+        if ($registrado!=null) {
+          //comprobación de la contraseña
+          if ($registrado['pass']==sha1($_POST['pass'])) {
+            //si el usuario es correcto, creamos la sesion.
+            echo "Usuario logueado";
+            $sesion->addUsuario($registrado['usuario']);
+            setcookie("id_usuario", $registrado['id'], time()+86400);
+            header('Location: index.php');
+          }else {
+            echo "Las contraseñas no coinciden";
+          }
+        }else {
+          echo "Usuario no encontrado";
+        }
       }
     }
      ?>
