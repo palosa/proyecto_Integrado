@@ -23,7 +23,7 @@
         include '../seguridad/seguridad.php';
         $sesion=new Seguridad();
         $sesion->addUsuario($username);
-        setcookie("id_usuario", 0, time()+86400);
+        unset($_COOKIE['id_usuario']);
         header('Location: ../index.php');
       }else {
         echo "Usuario o contraseña incorrectos";
