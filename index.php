@@ -28,21 +28,45 @@
 </header>
 <!-- Dentro de la etiqueta nav tenemos una lista del menu con los enlaces -->
 <nav>
-  <ul>
-    <li><a href="index.php">Inicio</a></li>
-    <li><a href="formularioPedidos.php">Pedido</a></li>
-    <li><a href="mostrarcarta.php">Carta</a></li>
-    <li><a href="formularioreservas.php">Reservas</a></li>
-    <li><a href="contacto.php">Contacto</a></li>
-    <li><a href="miPerfil.php">Mi Perfil</a></li>
-  </ul>
-</nav>
+  <?php
+  if (isset($_SESSION["usuario"])) {
+    if ($_SESSION["usuario"]=='sudo') {
+      echo "<ul>
+        <li><a href='index.php'>Inicio</a></li>
+        <li><a href='formularioPedidos.php'>Pedido</a></li>
+        <li><a href='mostrarcarta.php'>Carta</a></li>
+        <li><a href='formularioreservas.php'>Reservas</a></li>
+        <li><a href='contacto.php'>Contacto</a></li>
+        <li><a href='controlproductos.php'>Control productos</a></li>
+      </ul>";
+    }else {
+      echo "<ul>
+        <li><a href='index.php'>Inicio</a></li>
+        <li><a href='formularioPedidos.php'>Pedido</a></li>
+        <li><a href='mostrarcarta.php'>Carta</a></li>
+        <li><a href='formularioreservas.php'>Reservas</a></li>
+        <li><a href='contacto.php'>Contacto</a></li>
+        <li><a href='miPerfil.php'>Mi perfil</a></li>
+      </ul>";
+    }
+  }else {
+    echo "<ul>
+      <li><a href='index.php'>Inicio</a></li>
+      <li><a href='formularioPedidos.php'>Pedido</a></li>
+      <li><a href='mostrarcarta.php'>Carta</a></li>
+      <li><a href='formularioreservas.php'>Reservas</a></li>
+      <li><a href='contacto.php'>Contacto</a></li>
+    </ul>";
+  }
 
+   ?>
+</nav>
+<!-- Imagenes y texto del contenido del Index -->
   <article class="article">
     <table>
           <tr>
             <td><p>De la mano de nuestro chef Massamune os traemos la
-                Comida más tradicional japonesa en Catarroja</p>
+                comida más tradicional japonesa en Catarroja</p>
             </td>
           </tr>
       <tr>
@@ -51,7 +75,7 @@
       <tr>
         <tr>
           <td><p>Tras años trabajando en el Izakaya familiar Massamune
-              Quiere ofrecernos la experiencia de comer los ingredientes
+              quiere ofrecernos la experiencia de comer los ingredientes
               más frescos y de la mejor calidad. Para ello ha contado con el</p>
           </td>
         </tr>
@@ -61,8 +85,8 @@
         <td> <p>  mejor equipo posible, grande productos de nuestra tierra y
                   magníficos trabajadores .
                   Nuestra carta cuenta siempre con productos de temporada
-                  Y pescado fresco del día, el cual es mimado y cocinado con amor
-                  Para así sacarle el mejor sabor
+                  Y pescado fresco del día, el cual es mimado y cocinado con amor,
+                  para así sacarle el mejor sabor.
               </p>
         </td>
       </tr>

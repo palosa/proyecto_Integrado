@@ -27,14 +27,38 @@
       </div>
     </header>
     <nav>
-      <ul>
-        <li><a href="index.php">Inicio</a></li>
-        <li><a href="formularioPedidos.php">Pedido</a></li>
-        <li><a href="mostrarcarta.php">Carta</a></li>
-        <li><a href="formularioreservas.php">Reservas</a></li>
-        <li><a href="contacto.php">Contacto</a></li>
-        <li><a href="miPerfil.php">Mi Perfil</a></li>
-      </ul>
+      <?php
+      if (isset($_SESSION["usuario"])) {
+        if ($_SESSION["usuario"]=='sudo') {
+          echo "<ul>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='formularioPedidos.php'>Pedido</a></li>
+            <li><a href='mostrarcarta.php'>Carta</a></li>
+            <li><a href='formularioreservas.php'>Reservas</a></li>
+            <li><a href='contacto.php'>Contacto</a></li>
+            <li><a href='controlproductos.php'>Control productos</a></li>
+          </ul>";
+        }else {
+          echo "<ul>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='formularioPedidos.php'>Pedido</a></li>
+            <li><a href='mostrarcarta.php'>Carta</a></li>
+            <li><a href='formularioreservas.php'>Reservas</a></li>
+            <li><a href='contacto.php'>Contacto</a></li>
+            <li><a href='miPerfil.php'>Mi perfil</a></li>
+          </ul>";
+        }
+      }else {
+        echo "<ul>
+          <li><a href='index.php'>Inicio</a></li>
+          <li><a href='formularioPedidos.php'>Pedido</a></li>
+          <li><a href='mostrarcarta.php'>Carta</a></li>
+          <li><a href='formularioreservas.php'>Reservas</a></li>
+          <li><a href='contacto.php'>Contacto</a></li>
+        </ul>";
+      }
+
+       ?>
     </nav>
 
     <?php
@@ -52,7 +76,7 @@
       ?>
       <!-- Formulario para elegir el tipo de comida que quieres  -->
       <form class="" action="mostrarCarta.php" method="post">
-        <p>Selecionar tipo de comida</p>
+        <h1 class="titulo">Seleción por tipo de comida</h1>
         <select class="" name="tipo">
           <!-- foreach para recorrer el array de mostrarTipo para que nos salga una lista depleagble con todos los tipos -->
           <?php foreach ($tipo as  $value): ?>

@@ -9,31 +9,57 @@
     <!--header de la pagina con un banner y el logo-->
     <header>
       <div class="banner">
-    <img class="imagenlogo"src="images/logo.PNG" alt="">
-
-    <?php
-    include 'seguridad/seguridad.php';
-    $sesion=new Seguridad();
-      if (isset($_SESSION['usuario'])) {
-        echo "<a href='logout.php'>Cerrar sesion</a><a>&nbsp;&nbsp;</a>";
-      }else {
-        echo "<a href='login.php'>Iniciar sesion</a><a>&nbsp;&nbsp;</a>
-        <a href='registro.php'>Registro</a><a>&nbsp;&nbsp;</a>";
-      }
-     ?>
-
+      <img class="imagenlogo"src="images/logo.PNG" alt="">
+      <div class="enlaceBanner">
+        <ul>
+      <?php
+      include 'seguridad/seguridad.php';
+      $sesion=new Seguridad();
+        if (isset($_SESSION['usuario'])) {
+          echo "<li><a href='logout.php'>Cerrar sesion</a></li>";
+        }else {
+          echo "<li><a href='login.php'>Iniciar sesion</a>
+          <a href='registro.php'>Registro</a></li>";
+        }
+       ?>
+     </ul>
+     </div>
       </div>
     </header>
     <!--MENU-->
     <nav>
-      <ul>
-        <li><a href="index.php">Inicio</a></li>
-        <li><a href="formularioPedidos.php">Pedido</a></li>
-        <li><a href="mostrarcarta.php">Carta</a></li>
-        <li><a href="formularioreservas.php">Reservas</a></li>
-        <li><a href="contacto.php">Contacto</a></li>
-        <li><a href="miPerfil.php">Mi Perfil</a></li>
-      </ul>
+      <?php
+      if (isset($_SESSION["usuario"])) {
+        if ($_SESSION["usuario"]=='sudo') {
+          echo "<ul>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='formularioPedidos.php'>Pedido</a></li>
+            <li><a href='mostrarcarta.php'>Carta</a></li>
+            <li><a href='formularioreservas.php'>Reservas</a></li>
+            <li><a href='contacto.php'>Contacto</a></li>
+            <li><a href='controlproductos.php'>Control productos</a></li>
+          </ul>";
+        }else {
+          echo "<ul>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='formularioPedidos.php'>Pedido</a></li>
+            <li><a href='mostrarcarta.php'>Carta</a></li>
+            <li><a href='formularioreservas.php'>Reservas</a></li>
+            <li><a href='contacto.php'>Contacto</a></li>
+            <li><a href='miPerfil.php'>Mi perfil</a></li>
+          </ul>";
+        }
+      }else {
+        echo "<ul>
+          <li><a href='index.php'>Inicio</a></li>
+          <li><a href='formularioPedidos.php'>Pedido</a></li>
+          <li><a href='mostrarcarta.php'>Carta</a></li>
+          <li><a href='formularioreservas.php'>Reservas</a></li>
+          <li><a href='contacto.php'>Contacto</a></li>
+        </ul>";
+      }
+
+       ?>
     </nav>
 <!--Cuerpo de la pagina-->
     <article class="article">

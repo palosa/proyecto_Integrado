@@ -42,14 +42,38 @@ $pedido= new Productos();
     </header>
     <!--MENU-->
     <nav>
-      <ul>
-        <li><a href="index.php">Inicio</a></li>
-        <li><a href="formularioPedidos.php">Pedido</a></li>
-        <li><a href="mostrarcarta.php">Carta</a></li>
-        <li><a href="formularioreservas.php">Reservas</a></li>
-        <li><a href="contacto.php">Contacto</a></li>
-        <li><a href="miPerfil.php">Mi Perfil</a></li>
-      </ul>
+      <?php
+      if (isset($_SESSION["usuario"])) {
+        if ($_SESSION["usuario"]=='sudo') {
+          echo "<ul>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='formularioPedidos.php'>Pedido</a></li>
+            <li><a href='mostrarcarta.php'>Carta</a></li>
+            <li><a href='formularioreservas.php'>Reservas</a></li>
+            <li><a href='contacto.php'>Contacto</a></li>
+            <li><a href='controlproductos.php'>Control productos</a></li>
+          </ul>";
+        }else {
+          echo "<ul>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='formularioPedidos.php'>Pedido</a></li>
+            <li><a href='mostrarcarta.php'>Carta</a></li>
+            <li><a href='formularioreservas.php'>Reservas</a></li>
+            <li><a href='contacto.php'>Contacto</a></li>
+            <li><a href='miPerfil.php'>Mi perfil</a></li>
+          </ul>";
+        }
+      }else {
+        echo "<ul>
+          <li><a href='index.php'>Inicio</a></li>
+          <li><a href='formularioPedidos.php'>Pedido</a></li>
+          <li><a href='mostrarcarta.php'>Carta</a></li>
+          <li><a href='formularioreservas.php'>Reservas</a></li>
+          <li><a href='contacto.php'>Contacto</a></li>
+        </ul>";
+      }
+
+       ?>
     </nav>
     <article class="article">
       <form class="" action="controlproductos.php" method="post">
