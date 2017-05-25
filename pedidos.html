@@ -48,53 +48,26 @@
 
 
 <table id="productos">
-  <tr class="header">
-    <th style="width:33.33%;">producto</th>
-    <th style="width:33.33%;">proveedor</th>
-    <th style="width:33.33%;">fecha</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Germany</td>
-    <td>11/2/1992</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbkop</td>
-    <td>Sweden</td>
-    <td>11/3/1993</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>UK</td>
-    <td>11/4/1992</td>
-  </tr>
-  <tr>
-    <td>Koniglich Essen</td>
-    <td>Germany</td>
-    <td>11/5/1992</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Canada</td>
-    <td>11/6/1992</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Italy</td>
-    <td>11/7/1992</td>
-  </tr>
-  <tr>
-    <td>North/South</td>
-    <td>UK</td>
-    <td>11/8/1992</td>
-  </tr>
-  <tr>
-    <td>Paris specialites</td>
-    <td>France</td>
-    <td>11/9/1992</td>
-  </tr>
-</table>
+                <tr class="header">
+                  <th style="width:33.33%;">Producto</th>
+                  <th style="width:33.33%;">Proveedor</th>
+                  <th style="width:33.33%;">Fecha</th>
+                </tr>
+	<?php
 
+              include "modelo/productos.php";
+               $producto = new Productos();
+               $tabla=$producto->MostrarProductos();
+               foreach ($tabla as $fila) {
+               ?>
+               <tr>
+                 <td><?php echo $fila['producto']; ?></td>
+                 <td><?php echo $fila['proveedor']; ?></td>
+                 <td><?php echo $fila['fecha']; ?></td>
+               </tr>
+               <?php
+             }
+                ?>
 <script>
 
   var productoInput, proveedorInput, fechaInput, table, trs, tds, i;
