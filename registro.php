@@ -53,7 +53,7 @@
          alert("Usuario registrado con exito.");
        </script>
        <?php
-      header('Location: login.php')
+      header('Location: login.php');
         }
     }else {
      ?>
