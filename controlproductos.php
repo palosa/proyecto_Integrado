@@ -1,15 +1,18 @@
 <?php
 //incluimos y creamos todos los objetos necesarios
 include 'seguridad/seguridad.php';
-include '/modelo/producto.php';
+include 'modelo/productos.php';
 $sesion=new Seguridad();
-$pedido= new Producto();
+$pedido= new Productos();
 //comprobamos si la sesion esta iniciada.
   if (isset($_SESSION["usuario"])==false) {
     //si no esta iniciada lo enviamos a login para que la inicie
     header('Location: login.php');
   }else {
-    //si esta iniciada seguimos con la pagina
+    if ($_SESSION["usuario"]=='sudo') {
+
+
+    //si esta iniciada y es sudo seguimos con la pagina
  ?>
 <!DOCTYPE html>
 <html>
@@ -37,27 +40,54 @@ $pedido= new Producto();
      </div>
       </div>
     </header>
-    <?php
-  private  function InsertarProducto($producto,$proveedor,$fecha){
-      $this->conexion->query("INSERT INTO producto (Producto, Proveedor, Fecha) VALUES ('".$producto."','".$proveedor."','".$fecha."')");
-    }
-
-    if (isset($_POST)) {
-        $this->conexion->InsertarProducto($_POST['producto'],$_POST['proveedor'],$_POST['fecha']);
-    }
-     ?>
-        <form class="" action="controlproductos.php" method="post">
-          <label for="Producto">Producto</label>
+    <!--MENU-->
+    <nav>
+      <ul>
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="formularioPedidos.php">Pedido</a></li>
+        <li><a href="mostrarcarta.php">Carta</a></li>
+        <li><a href="formularioreservas.php">Reservas</a></li>
+        <li><a href="contacto.php">Contacto</a></li>
+        <li><a href="miPerfil.php">Mi Perfil</a></li>
+      </ul>
+    </nav>
+    <article class="article">
+      <form class="" action="controlproductos.php" method="post">
+        <fieldset>
+          <legend>Pedido de productos</legend>
+          Producto: <br>
           <input type="text" name="producto" value="">
 
-          <label for="Proveedor">Proveedor</label>
+          Proveedor: <br>
           <input type="text" name="proveedor" value="">
 
-          <label for="Fecha">Fecha</label>
+          Fecha: <br>
           <input type="date" name="fecha" value="">
 
           <input type="submit" name="" value="Añadir Producto">
-        </form>
+        </fieldset>
+      </form>
+    <?php
+      if (isset($_POST['producto']) && isset($_POST['proveedor']) && isset($_POST['fecha'])) {
+
+        $resultado=$pedido->insertarProducto($_POST['producto'], $_POST['proveedor'], $_POST['fecha']);
+        if ($resultado==null) {
+          ?>
+          <script type="text/javascript">
+            alert("Error al registrar el pedido");
+          </script>
+          <?php
+        }else {
+          ?>
+            <script type="text/javascript">
+              alert("Pedido registrado con exito.");
+            </script>
+          <?php
+        }
+      }
+     ?>
+    </article>
+
   <!--Footer de la pagina -->
   <footer>
     <div class="text">
@@ -71,4 +101,8 @@ $pedido= new Producto();
 
   </body>
 </html>
-<?php } ?>
+<?php
+    }else {
+      header('Location: index.php');
+    }
+ } ?>

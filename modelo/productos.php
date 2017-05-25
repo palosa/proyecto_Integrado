@@ -27,6 +27,19 @@ class Productos extends db
       return null;
     }
   }
+
+  //funcion para insertar el producto
+  function insertarProducto($producto, $proveedor, $fecha){
+    //realizamos la consuta y la guardamos en $sql
+    $sql="INSERT INTO producto(id, producto, proveedor, fecha) VALUES (NULL, '".$producto."', '".$proveedor."', '".$fecha."')";
+    //Realizamos la consulta
+    $resultado=$this->realizarConsulta($sql);
+    if($resultado!=false){
+      return true;
+    }else{
+      return null;
+    }
+  }
 }
 
  ?>
