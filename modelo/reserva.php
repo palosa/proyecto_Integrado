@@ -76,10 +76,23 @@ class Reserva extends db
             return false;
           }
         }
+
+        function mostrarReservasSudo($fecha){
+              //Construimos la consulta
+              $sql="SELECT * from reserva WHERE fecha>='".$fecha."' ORDER BY fecha ASC";
+              //Realizamos la consulta
+              $resultado=$this->realizarConsulta($sql);
+              if($resultado!=null){
+                //Montamos la tabla de resultado
+                $tabla=[];
+                while($fila=$resultado->fetch_assoc()){
+                  $tabla[]=$fila;
+                }
+                return $tabla;
+              }else{
+                return null;
+              }
+            }
+
 }
-
-
-
-
-
  ?>

@@ -44,7 +44,7 @@ if (isset($_SESSION["usuario"])==false) {
          <li><a href='index.php'>Inicio</a></li>
          <li><a href='formularioPedidos.php'>para llevar</a></li>
          <li><a href='mostrarcarta.php'>Carta</a></li>
-         <li><a href='formularioreservas.php'>Reservas</a></li>
+         <li><a href='reservasudo.php'>Reservas</a></li>
          <li><a href='contacto.php'>Contacto</a></li>
          <li><a href='controlproductos.php'>Control productos</a></li>
        </ul>";
