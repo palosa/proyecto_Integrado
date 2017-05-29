@@ -42,7 +42,7 @@ if (isset($_SESSION["usuario"])==false) {
      if ($_SESSION["usuario"]=='sudo') {
        echo "<ul>
          <li><a href='index.php'>Inicio</a></li>
-         <li><a href='formularioPedidos.php'>Pedido</a></li>
+         <li><a href='formularioPedidos.php'>para llevar</a></li>
          <li><a href='mostrarcarta.php'>Carta</a></li>
          <li><a href='formularioreservas.php'>Reservas</a></li>
          <li><a href='contacto.php'>Contacto</a></li>
@@ -51,7 +51,7 @@ if (isset($_SESSION["usuario"])==false) {
      }else {
        echo "<ul>
          <li><a href='index.php'>Inicio</a></li>
-         <li><a href='formularioPedidos.php'>Pedido</a></li>
+         <li><a href='formularioPedidos.php'>Para llevar</a></li>
          <li><a href='mostrarcarta.php'>Carta</a></li>
          <li><a href='formularioreservas.php'>Reservas</a></li>
          <li><a href='contacto.php'>Contacto</a></li>
@@ -61,7 +61,7 @@ if (isset($_SESSION["usuario"])==false) {
    }else {
      echo "<ul>
        <li><a href='index.php'>Inicio</a></li>
-       <li><a href='formularioPedidos.php'>Pedido</a></li>
+       <li><a href='formularioPedidos.php'>Para llevar</a></li>
        <li><a href='mostrarcarta.php'>Carta</a></li>
        <li><a href='formularioreservas.php'>Reservas</a></li>
        <li><a href='contacto.php'>Contacto</a></li>

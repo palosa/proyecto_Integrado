@@ -29,7 +29,7 @@ $sesion=new Seguridad();
     if ($_SESSION["usuario"]=='sudo') {
       echo "<ul>
         <li><a href='index.php'>Inicio</a></li>
-        <li><a href='formularioPedidos.php'>Pedido</a></li>
+        <li><a href='formularioPedidos.php'>Para llevar</a></li>
         <li><a href='mostrarcarta.php'>Carta</a></li>
         <li><a href='formularioreservas.php'>Reservas</a></li>
         <li><a href='contacto.php'>Contacto</a></li>
@@ -38,7 +38,7 @@ $sesion=new Seguridad();
     }else {
       echo "<ul>
         <li><a href='index.php'>Inicio</a></li>
-        <li><a href='formularioPedidos.php'>Pedido</a></li>
+        <li><a href='formularioPedidos.php'>Para llevar</a></li>
         <li><a href='mostrarcarta.php'>Carta</a></li>
         <li><a href='formularioreservas.php'>Reservas</a></li>
         <li><a href='contacto.php'>Contacto</a></li>
@@ -48,7 +48,7 @@ $sesion=new Seguridad();
   }else {
     echo "<ul>
       <li><a href='index.php'>Inicio</a></li>
-      <li><a href='formularioPedidos.php'>Pedido</a></li>
+      <li><a href='formularioPedidos.php'>Para llevar</a></li>
       <li><a href='mostrarcarta.php'>Carta</a></li>
       <li><a href='formularioreservas.php'>Reservas</a></li>
       <li><a href='contacto.php'>Contacto</a></li>
@@ -58,7 +58,7 @@ $sesion=new Seguridad();
    ?>
 </nav>
 <div class="enviar-sujerencias">
-  <h2>Enviar sujerencias:</h2>
+  <h2>Enviar sugerencias:</h2>
 <form class="" action="index.html" method="post">
   Nombre: <input type="text" name="nombre" value=""> <br><br>
   Apellidos:<input type="text" name="apellidos" value=""> <br><br>
