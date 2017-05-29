@@ -148,9 +148,7 @@ div.centrar table{
   color: #333;
   font-size: 18px;
 }
-.encuentranos{
 
-}
 .nosotros{
   padding: 20px;
   margin-top: 20px;
@@ -216,15 +214,39 @@ strong.nosotros{
   text-align: center;
 }
 
-.datos-personales{
-  border:8px solid #FFBF00;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.datos-personales a{
+  background-color: #ff8a00;
+   border: 1px solid rgb(255, 207, 4);
+   color: white;
+   padding: 10px 12px;
+   text-align: center;
+   font-size: 16px;
 }
-.reservas-pendientes{
-  border:8px solid #FFBF00;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.datos-personales a:hover{
+  background-color: #fcbf05;
+   color: white;
+   padding: 10px 12px;
+   text-align: center;
+   font-size: 16px;
+}
+
+.reservas-pendientes a{
+  background-color: #ff8a00;
+   border: 1px solid rgb(255, 207, 4);
+   color: white;
+   padding: 10px 12px;
+   text-align: center;
+   font-size: 16px;
+
+}
+.reservas-pendientes a:hover{
+  background-color: #fcbf05;
+   /*border: none;*/
+   color: white;
+   padding: 10px 12px;
+   text-align: center;
+   /*text-decoration: none;*/
+   /*display: inline-block;*/
+   font-size: 16px;
+
 }
