@@ -35,6 +35,24 @@ function hacerPedido($usuario, $fecha){
   }
 }
 
+//Funcion para mostrar el pedido al sudo
+
+function mostrarPedidoSudo($fecha){
+      //Construimos la consulta
+      $sql="SELECT * from pedido WHERE fecha='".$fecha."'";
+      //Realizamos la consulta
+      $resultado=$this->realizarConsulta($sql);
+      if($resultado!=null){
+        //Montamos la tabla de resultado
+        $tabla=[];
+        while($fila=$resultado->fetch_assoc()){
+          $tabla[]=$fila;
+        }
+        return $tabla;
+      }else{
+        return null;
+      }
+    }
 //funcion para insertar el pedido con lo que quiere en la tabla pedido_carta
 function hacerPedido_carta($pedido, $carta){
   //realizamos la consuta y la guardamos en $sql

@@ -1,9 +1,9 @@
 <?php
   include 'seguridad/seguridad.php';
-  include 'modelo/reserva.php';
+  include 'modelo/pedido.php';
 
   $sesion=new Seguridad();
-  $reserva= new Reserva();
+  $pedido= new Pedido();
   //comprobamos si la sesion esta iniciada.
     if (isset($_SESSION["usuario"])==false) {
       //si no esta iniciada lo enviamos a login para que la inicie
@@ -75,12 +75,10 @@
     </nav>
     <article class="article">
     <?php
-      $resultado=$reserva->mostrarReservasSudo(date("Y-m-d"));
+      $resultado=$pedido->mostrarPedidoSudo(date("Y-m-d"));
       foreach ($resultado as $fila) {
         echo "<h2>".$fila['fecha']."</h2>";
-        echo "USUARIO: " .$fila['user'] ."<br><br>";
-        echo "HORA: " .$fila['hora'] ."<br><br>";
-        echo "PERSONAS: " .$fila['personas'] ."<br><br>";
+        echo "USUARIO: " .$fila['id_user'] ."<br><br>";
         echo "<hr>";
       }
      ?>
